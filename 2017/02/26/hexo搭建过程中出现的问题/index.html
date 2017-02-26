@@ -6,14 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 文以致远</title>
+  <title>hexo搭建过程中出现的问题 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="##hexo搭建过程中出现的问题11   1 在改变_config_yml的时候，要注意，字和前面的目录之间不能有空格否则就会出现下面的这种情况
+出现这种情况之后，请到相应的位置，并做修改，如果不行可以考虑注释掉出问题的那一行，然后在$ hexo s 试一下。
+2TypeError: The header content contains invalid characters 在安装的过程当中还出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo搭建过程中出现的问题">
+<meta property="og:url" content="http://yoursite.com/2017/02/26/hexo搭建过程中出现的问题/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="##hexo搭建过程中出现的问题11   1 在改变_config_yml的时候，要注意，字和前面的目录之间不能有空格否则就会出现下面的这种情况
+出现这种情况之后，请到相应的位置，并做修改，如果不行可以考虑注释掉出问题的那一行，然后在$ hexo s 试一下。
+2TypeError: The header content contains invalid characters 在安装的过程当中还出">
+<meta property="og:image" content="http://yoursite.com/./2017-02-26_104759.png">
+<meta property="og:updated_time" content="2017-02-26T10:43:45.418Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文以致远">
+<meta name="twitter:title" content="hexo搭建过程中出现的问题">
+<meta name="twitter:description" content="##hexo搭建过程中出现的问题11   1 在改变_config_yml的时候，要注意，字和前面的目录之间不能有空格否则就会出现下面的这种情况
+出现这种情况之后，请到相应的位置，并做修改，如果不行可以考虑注释掉出问题的那一行，然后在$ hexo s 试一下。
+2TypeError: The header content contains invalid characters 在安装的过程当中还出">
+<meta name="twitter:image" content="http://yoursite.com/./2017-02-26_104759.png">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -153,76 +165,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-hexo搭建过程中出现的问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      hexo搭建过程中出现的问题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/26/hexo搭建过程中出现的问题/" class="archive-article-date">
+
+        
+        <a href="/2017/02/26/hexo搭建过程中出现的问题/" class="archive-article-date">
   	<time datetime="2017-02-26T10:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/26/hexo搭建过程中出现的问题/">hexo搭建过程中出现的问题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##hexo搭建过程中出现的问题<br>11<br>   1 在改变_config_yml的时候，要注意，字和前面的目录之间不能有空格否则就会出现下面的这种情况<br><img src="./2017-02-26_104759.png" alt="Alt text"></p>
+<p>出现这种情况之后，请到相应的位置，并做修改，如果不行可以考虑注释掉出问题的那一行，然后在$ hexo s 试一下。</p>
+<p>2<br>TypeError: The header content contains invalid characters 在安装的过程当中还出现了这个问题</p>
+<p>解决的方法如下：<a href="https://github.com/hexojs/hexo/issues/1746" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1746</a><br>当你 在 _config_yml（首页的而不是themes当中的）进行了设置时候，尤其是改变 副标题（subtitle)之后就可能会出现这个问题<br>具体的原理其实我现在也还没弄清楚，但是感觉是hexo sever 有点问题。经过安装HTTP-sever之后没问题了</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/26/hexo搭建过程中出现的问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/25/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-25T15:07:18.906Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/25/hello-world/">Hello World</a>
-    </h1>
+  
+    <a href="/2017/02/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -245,8 +322,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
