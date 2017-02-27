@@ -147,6 +147,57 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-怎么推自己的项目到github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/27/怎么推自己的项目到github/">怎么推自己的项目到github</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/27/怎么推自己的项目到github/" class="archive-article-date">
+  	<time datetime="2017-02-27T13:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说来也简单，但是对于刚刚入门的萌新来讲，其实还是有点难度的。<br>1<br>如果你是第一次使用的话，那么强烈建议你去<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br>个人诚心推荐，如果有能力的话，去阅读以下官方的文档也是很不错的。<br> （1）如果你已经10天前推过一次自己的项目，10天后建立了一个新的项目又来推，你发现你自己忘了怎么推了。<br> 即刚刚在自己的github上建立的项目还开始没把本地上的项目开始推<br> （1）git init<br> 在某一个目录下你就可以初始化空的git仓库完毕了（.git文件不用工具的话是看不见的）<br> （2）git add  READEME.md(如果你没有在github初始化时添加)<br> 如果添加了的话可以跳过这一步直接到（3）<br> （3） git  add .<br> 这个就是添加你所在文件中的所有的东西不论格式怎么样<br> 当然也可以添加其他的格式<br> 如 git add  a.txt这个就是说添加一个名字叫a.txt的文件<br> （4）git commit -m  “你所做的修改”<br> 双引号里面的就是你对文件所做的修改<br> （5）git remote add origin  git@github.com:blackcloud2333/ex.git<br> 添加一个叫origin的远程仓库<br> （6）git push -u origin master<br> 将本地的更改推送到远程的分支。<br> （7）然后就可以去自己的github上看到实际的效果了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/27/怎么推自己的项目到github/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo搭建过程中出现的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +223,7 @@
 <p>2<br>TypeError: The header content contains invalid characters 在安装的过程当中还出现了这个问题</p>
 <p>解决的方法如下：<a href="https://github.com/hexojs/hexo/issues/1746" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1746</a><br>当你 在 _config_yml（首页的而不是themes当中的）进行了设置时候，尤其是改变 副标题（subtitle)之后就可能会出现这个问题<br>具体的原理其实我现在也还没弄清楚，但是感觉是hexo sever 有点问题。经过安装HTTP-sever之后没问题了<br>3<br>  还有就是下面的这种问题<br>  <img src="http://p1.bqimg.com/567571/1a85d834bd4e62f2.png" alt=""><br>  这种问题一般来说是没有按规则先进行 hexo new “文章标题”<br>  而你自己写了markdown，没有引入文章的头部</p>
 <h2 id="lt-–"><a href="#lt-–" class="headerlink" title="&lt;!–"></a>&lt;!–</h2><p>title: hexo搭建过程中出现的问题<br>date: 2017-02-26 18:42:19<br>tags:<br>—-&gt;</p>
-<p>所以会引起相关的问题。</p>
+<p>所以会引起相关的问题</p>
 
       
 
