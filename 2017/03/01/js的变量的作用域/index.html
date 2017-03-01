@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>文以致远</title>
+  <title>js的变量的作用域 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1  js 当中存在着作用域链  （1)  当函数受到调用需要进行变量的调用的时候，会先到最内层的函数去找。  如果找到了就直接输出，最内层的函数。  如果没有找到，那么去外层函数找，找到了，输出外层函数定义的变量。  如果还是没有找到，那么就去找整个函数外层的变量，如果还没找到，就会报错var  ss=1;function ts(){        var ss=3;    function i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js的变量的作用域">
+<meta property="og:url" content="http://yoursite.com/2017/03/01/js的变量的作用域/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="1  js 当中存在着作用域链  （1)  当函数受到调用需要进行变量的调用的时候，会先到最内层的函数去找。  如果找到了就直接输出，最内层的函数。  如果没有找到，那么去外层函数找，找到了，输出外层函数定义的变量。  如果还是没有找到，那么就去找整个函数外层的变量，如果还没找到，就会报错var  ss=1;function ts(){        var ss=3;    function i">
+<meta property="og:updated_time" content="2017-03-01T04:29:04.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文以致远">
+<meta name="twitter:title" content="js的变量的作用域">
+<meta name="twitter:description" content="1  js 当中存在着作用域链  （1)  当函数受到调用需要进行变量的调用的时候，会先到最内层的函数去找。  如果找到了就直接输出，最内层的函数。  如果没有找到，那么去外层函数找，找到了，输出外层函数定义的变量。  如果还是没有找到，那么就去找整个函数外层的变量，如果还没找到，就会报错var  ss=1;function ts(){        var ss=3;    function i">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -145,16 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-js的变量的作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js的变量的作用域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/01/js的变量的作用域/">js的变量的作用域</a>
+    <h1 class="article-title" itemprop="name">
+      js的变量的作用域
     </h1>
   
 
@@ -177,56 +179,26 @@ console.log();
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/01/js的变量的作用域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-怎么推自己的项目到github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/怎么推自己的项目到github/">怎么推自己的项目到github</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/27/怎么推自己的项目到github/" class="archive-article-date">
-  	<time datetime="2017-02-27T13:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说来也简单，但是对于刚刚入门的萌新来讲，其实还是有点难度的。<br>1<br>如果你是第一次使用的话，那么强烈建议你去<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br>个人诚心推荐，如果有能力的话，去阅读以下官方的文档也是很不错的。<br> （1）如果你已经10天前推过一次自己的项目，10天后建立了一个新的项目又来推，你发现你自己忘了怎么推了。<br> 即刚刚在自己的github上建立的项目还开始没把本地上的项目开始推<br> （1）git init<br> 在某一个目录下你就可以初始化空的git仓库完毕了（.git文件不用工具的话是看不见的）<br> （2）git add  READEME.md(如果你没有在github初始化时添加)<br> 如果添加了的话可以跳过这一步直接到（3）<br> （3） git  add .<br> 这个就是添加你所在文件中的所有的东西不论格式怎么样<br> 当然也可以添加其他的格式<br> 如 git add  a.txt这个就是说添加一个名字叫a.txt的文件<br> （4）git commit -m  “你所做的修改”<br> 双引号里面的就是你对文件所做的修改<br> （5）git remote add origin  git@github.com:blackcloud2333/ex.git<br> 添加一个叫origin的远程仓库<br> （6）git push -u origin master<br> 将本地的更改推送到远程的分支。<br> （7）然后就可以去自己的github上看到实际的效果了</p>
-
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -235,18 +207,74 @@ console.log();
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/27/怎么推自己的项目到github/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/01/js的变量的作用域/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/27/怎么推自己的项目到github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">怎么推自己的项目到github</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -254,63 +282,10 @@ console.log();
 
 
   
-    <article id="post-hexo搭建过程中出现的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/26/hexo搭建过程中出现的问题/">hexo搭建过程中出现的问题</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2017/02/26/hexo搭建过程中出现的问题/" class="archive-article-date">
-  	<time datetime="2017-02-26T10:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   1 在改变_config_yml的时候，要注意，字和前面的目录之间不能有空格否则就会出现下面的这种情况<br><img src="http://i1.piimg.com/567571/f8d595d776b54aba.png" alt=""></p>
-<p>出现这种情况之后，请到相应的位置，并做修改，如果不行可以考虑注释掉出问题的那一行，然后在$ hexo s 试一下。</p>
-<p>2<br>TypeError: The header content contains invalid characters 在安装的过程当中还出现了这个问题</p>
-<p>解决的方法如下：<a href="https://github.com/hexojs/hexo/issues/1746" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1746</a><br>当你 在 _config_yml（首页的而不是themes当中的）进行了设置时候，尤其是改变 副标题（subtitle)之后就可能会出现这个问题<br>具体的原理其实我现在也还没弄清楚，但是感觉是hexo sever 有点问题。经过安装HTTP-sever之后没问题了<br>3<br>  还有就是下面的这种问题<br>  <img src="http://p1.bqimg.com/567571/1a85d834bd4e62f2.png" alt=""><br>  这种问题一般来说是没有按规则先进行 hexo new “文章标题”<br>  而你自己写了markdown，没有引入文章的头部</p>
-<h2 id="lt-–"><a href="#lt-–" class="headerlink" title="&lt;!–"></a>&lt;!–</h2><p>title: hexo搭建过程中出现的问题<br>date: 2017-02-26 18:42:19<br>tags:<br>—-&gt;</p>
-<p>所以会引起相关的问题</p>
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/26/hexo搭建过程中出现的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -332,8 +307,8 @@ console.log();
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
