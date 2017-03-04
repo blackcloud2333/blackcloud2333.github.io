@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 文以致远</title>
+  <title>说出来你可能不信系列（1）原型链到底什么鬼？ | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="说出来你可能不信，虽然撸过一遍js高程设计，但是很多的地方还是不懂，比如原型链，也即是js继承的实现方式。JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。原型链的结尾成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="说出来你可能不信系列（1）原型链到底什么鬼？">
+<meta property="og:url" content="http://yoursite.com/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="说出来你可能不信，虽然撸过一遍js高程设计，但是很多的地方还是不懂，比如原型链，也即是js继承的实现方式。JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。原型链的结尾成">
+<meta property="og:updated_time" content="2017-03-04T10:35:59.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文以致远">
+<meta name="twitter:title" content="说出来你可能不信系列（1）原型链到底什么鬼？">
+<meta name="twitter:description" content="说出来你可能不信，虽然撸过一遍js高程设计，但是很多的地方还是不懂，比如原型链，也即是js继承的实现方式。JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。原型链的结尾成">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -145,157 +149,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-说出来你可能不信系列（1）原型链到底什么鬼？" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      说出来你可能不信系列（1）原型链到底什么鬼？
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/" class="archive-article-date">
+
+        
+        <a href="/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/" class="archive-article-date">
   	<time datetime="2017-03-02T12:58:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/">说出来你可能不信系列（1）原型链到底什么鬼？</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说出来你可能不信，虽然撸过一遍js高程设计，但是很多的地方还是不懂，比如原型链，也即是js继承的实现方式。<br>JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。<br>原型链的结尾成为null，而null被规定是没有prototype属性的，所以当你搜索到null的时候你的原型链也就到头了。<br>一个简单的例子<br>var z={<br>    a:5,<br>    m:function add(){<br>    return this.a+1;<br>}<br>}<br>console.log(z.m());//6<br>z–&gt;Object.prototype—&gt;null;<br>var f=Object.create(z);<br>f.a=10;<br>console.log(z.m());<br>//11<br>f–&gt;z找到了就返回相应的函数，找不到就继续找。<br>这个就是最简单地原型链了。<br>1</p>
+<p>#使用普通的方法的创建对象<br>function  zz(){<br>    return 2;<br>}<br>zz–&gt;function.prototype—&gt;Object.prototype–&gt;null;</p>
+<p>#使用构造器构造函数<br>(我现在还很晕，就先不写了)；</p>
+<p>#使用Object create创建对象<br>var a{ a:”wo qis shi hen shuai”}<br>var b=Object.create(a);<br>b-&gt;a-&gt;object.prototype-&gt;null;<br>2<br>在原型链上查找属性比较耗时，对性能有副作用，这在性能要求苛刻的情况下很重要。另外，试图访问不存在的属性时会遍历整个原型链。,所以尽量先用hasOwnProperty来检验一下。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/01/js的变量的作用域/" class="archive-article-date">
-  	<time datetime="2017-03-01T03:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-01</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/01/js的变量的作用域/">js的变量的作用域</a>
-    </h1>
+  
+    <a href="/2017/03/01/js的变量的作用域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js的变量的作用域</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/27/在使用git过程中出现的问题/" class="archive-article-date">
-  	<time datetime="2017-02-27T13:46:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/27/在使用git过程中出现的问题/">在使用git过程中出现的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/27/怎么推自己的项目到github/" class="archive-article-date">
-  	<time datetime="2017-02-27T13:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/27/怎么推自己的项目到github/">怎么推自己的项目到github</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/26/hexo搭建过程中出现的问题/" class="archive-article-date">
-  	<time datetime="2017-02-26T10:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/26/hexo搭建过程中出现的问题/">hexo搭建过程中出现的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -318,8 +306,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
