@@ -147,6 +147,59 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-欠债还钱系列（2）不得不面对的闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">欠债还钱系列（2）不得不面对的闭包</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" class="archive-article-date">
+  	<time datetime="2017-03-22T13:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如<br>.闭包 下面五段代码分别输出什么？并且什么时候输出什么？<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    console.log(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout(function() {<br>        console.log(i);<br>    }, 1000 <em> i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i </em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function() {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i </em> 1000);<br>}<br></code><br>这道题就是很经典的闭包的面试题，以及他的几个变种，但是核心来讲还是闭包的问题。<br>闭包：一个有权访问另一个函数作用域的函数。<br>前两道，相信大家都看烂了，所以也不多表，在这里我想说的是第三道，这个涉及了IIFE,闭包，js的单线程，以及匿名函数的作用域等问题。<br>关于这道题的IIFE（立即执行函数）<br><code><br>(function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>    </em></code><br>上面的其实可以这样写<br><code><br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i  1000);<br>    })；<br>    (i);<br></code><br>这样写可能比较好理解，也即是先声明了一个函数表达式，后面的调用这个函数表达式，并且把i传进函数表达式。<br>而且函数通过他们的名字被调用时，参数会被传递，而当函数表达式被立即调用时，参数也会被立即传递。一个立即调用的函数表达式可以锁定当时的状态。<br>因此这样函数表达式外的i就可以顺利的被括号内的function调用和访问了，这样就实现了闭包。<br>如果你不理解这样的写法那么可以先这样写<br><code><br>for(var i=0;i<5;i++){ function="" ret(i){="" timer(){="" console.log(i);="" }="" settimeout(i*1000);="" ret(i);="" <="" code=""><br>这样的话其实会好理解很多，也可以实现闭包。所以结果也就不奇怪了。<br>对于第四题<br>因为根本没有传i进function()里面去，所以循环里面是立即执行的函数，会给每个匿名的函数执行setTimeout，而由于JS的单线程，5个setTimeout()会等待for循环完了再执行，因此会连续的输出5个5.<br>至于第5道，我认为也是很有意思的<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i * 1000);<br>}<br></code><br>这个考察了对callback的理解，<br>(function(i) {<br>        console.log(i);<br>    })(i)；<br>    这个是一个立即执行的函数的表达式而不是函数！不是函数！不是函数！<br>    而callback要求的是一个函数，因此肯定会报错<br>      throw new TypeError(‘“callback” argument must be a function’);</5;i++){></code></p>
+<pre><code>参考资料：https://segmentfault.com/q/1010000008766695?_ea=1736049
+          https://zhuanlan.zhihu.com/p/25855075（强烈推荐去看，比我写的好的多，通俗易懂也更有技术深度）。
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-欠债还钱系列（1—）Enumberable是什么？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -620,62 +673,10 @@ console.log();
 
 
   
-    <article id="post-hexo搭建过程中出现的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/26/hexo搭建过程中出现的问题/">hexo搭建过程中出现的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/26/hexo搭建过程中出现的问题/" class="archive-article-date">
-  	<time datetime="2017-02-26T10:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   1 在改变_config_yml的时候，要注意，字和前面的目录之间不能有空格否则就会出现下面的这种情况<br><img src="http://i1.piimg.com/567571/f8d595d776b54aba.png" alt=""></p>
-<p>出现这种情况之后，请到相应的位置，并做修改，如果不行可以考虑注释掉出问题的那一行，然后在$ hexo s 试一下。</p>
-<p>2<br>TypeError: The header content contains invalid characters 在安装的过程当中还出现了这个问题</p>
-<p>解决的方法如下：<a href="https://github.com/hexojs/hexo/issues/1746" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1746</a><br>当你 在 _config_yml（首页的而不是themes当中的）进行了设置时候，尤其是改变 副标题（subtitle)之后就可能会出现这个问题<br>具体的原理其实我现在也还没弄清楚，但是感觉是hexo sever 有点问题。经过安装HTTP-sever之后没问题了<br>3<br>  还有就是下面的这种问题<br>  <img src="http://p1.bqimg.com/567571/1a85d834bd4e62f2.png" alt=""><br>  这种问题一般来说是没有按规则先进行 hexo new “文章标题”<br>  而你自己写了markdown，没有引入文章的头部</p>
-<h2 id="lt-–"><a href="#lt-–" class="headerlink" title="&lt;!–"></a>&lt;!–</h2><p>title: hexo搭建过程中出现的问题<br>date: 2017-02-26 18:42:19<br>tags:<br>—-&gt;</p>
-<p>所以会引起相关的问题</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/26/hexo搭建过程中出现的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 

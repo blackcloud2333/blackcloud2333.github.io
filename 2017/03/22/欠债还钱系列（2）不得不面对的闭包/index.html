@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/3 | 文以致远</title>
+  <title>欠债还钱系列（2）不得不面对的闭包 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
+  <meta name="description" content="闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如.闭包 下面五段代码分别输出什么？并且什么时候输出什么？for(var i = 0; i &amp;lt; 5; i++) {    console.log(i);}for">
+<meta property="og:type" content="article">
+<meta property="og:title" content="欠债还钱系列（2）不得不面对的闭包">
+<meta property="og:url" content="http://yoursite.com/2017/03/22/欠债还钱系列（2）不得不面对的闭包/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如.闭包 下面五段代码分别输出什么？并且什么时候输出什么？for(var i = 0; i &amp;lt; 5; i++) {    console.log(i);}for">
+<meta property="og:updated_time" content="2017-03-22T14:02:08.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文以致远">
+<meta name="twitter:title" content="欠债还钱系列（2）不得不面对的闭包">
+<meta name="twitter:description" content="闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如.闭包 下面五段代码分别输出什么？并且什么时候输出什么？for(var i = 0; i &amp;lt; 5; i++) {    console.log(i);}for">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -145,238 +149,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-欠债还钱系列（2）不得不面对的闭包" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      欠债还钱系列（2）不得不面对的闭包
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" class="archive-article-date">
+
+        
+        <a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" class="archive-article-date">
   	<time datetime="2017-03-22T13:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">欠债还钱系列（2）不得不面对的闭包</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如<br>.闭包 下面五段代码分别输出什么？并且什么时候输出什么？<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    console.log(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout(function() {<br>        console.log(i);<br>    }, 1000 <em> i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i </em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function() {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i </em> 1000);<br>}<br></code><br>这道题就是很经典的闭包的面试题，以及他的几个变种，但是核心来讲还是闭包的问题。<br>闭包：一个有权访问另一个函数作用域的函数。<br>前两道，相信大家都看烂了，所以也不多表，在这里我想说的是第三道，这个涉及了IIFE,闭包，js的单线程，以及匿名函数的作用域等问题。<br>关于这道题的IIFE（立即执行函数）<br><code><br>(function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>    </em></code><br>上面的其实可以这样写<br><code><br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i  1000);<br>    })；<br>    (i);<br></code><br>这样写可能比较好理解，也即是先声明了一个函数表达式，后面的调用这个函数表达式，并且把i传进函数表达式。<br>而且函数通过他们的名字被调用时，参数会被传递，而当函数表达式被立即调用时，参数也会被立即传递。一个立即调用的函数表达式可以锁定当时的状态。<br>因此这样函数表达式外的i就可以顺利的被括号内的function调用和访问了，这样就实现了闭包。<br>如果你不理解这样的写法那么可以先这样写<br><code><br>for(var i=0;i<5;i++){ function="" ret(i){="" timer(){="" console.log(i);="" }="" settimeout(i*1000);="" ret(i);="" <="" code=""><br>这样的话其实会好理解很多，也可以实现闭包。所以结果也就不奇怪了。<br>对于第四题<br>因为根本没有传i进function()里面去，所以循环里面是立即执行的函数，会给每个匿名的函数执行setTimeout，而由于JS的单线程，5个setTimeout()会等待for循环完了再执行，因此会连续的输出5个5.<br>至于第5道，我认为也是很有意思的<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i * 1000);<br>}<br></code><br>这个考察了对callback的理解，<br>(function(i) {<br>        console.log(i);<br>    })(i)；<br>    这个是一个立即执行的函数的表达式而不是函数！不是函数！不是函数！<br>    而callback要求的是一个函数，因此肯定会报错<br>      throw new TypeError(‘“callback” argument must be a function’);</5;i++){></code></p>
+<pre><code>参考资料：https://segmentfault.com/q/1010000008766695?_ea=1736049
+          https://zhuanlan.zhihu.com/p/25855075（强烈推荐去看，比我写的好的多，通俗易懂也更有技术深度）。
+</code></pre>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/22/欠债还钱系列（1—）Enumberable是什么？/" class="archive-article-date">
-  	<time datetime="2017-03-22T12:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/22/欠债还钱系列（1—）Enumberable是什么？/">欠债还钱系列（1—）Enumberable是什么？</a>
-    </h1>
+  
+    <a href="/2017/03/22/欠债还钱系列（1—）Enumberable是什么？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">欠债还钱系列（1—）Enumberable是什么？</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/21/笔试总结-新美大/" class="archive-article-date">
-  	<time datetime="2017-03-21T14:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/21/笔试总结-新美大/">笔试总结--新美大</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/15/bootstrap页面草稿/" class="archive-article-date">
-  	<time datetime="2017-03-15T13:39:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/15/bootstrap页面草稿/">bootstrap页面草稿</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/13/“说出来你可能不信（2），bootstrap贼好用？”/" class="archive-article-date">
-  	<time datetime="2017-03-13T12:58:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/13/“说出来你可能不信（2），bootstrap贼好用？”/">“说出来你可能不信（2），bootstrap贼好用（1）？”</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/ajax怎么用？/" class="archive-article-date">
-  	<time datetime="2017-03-10T13:10:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/ajax怎么用？/">ajax怎么用？</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/" class="archive-article-date">
-  	<time datetime="2017-03-02T12:58:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/02/说出来你可能不信系列（1）原型链到底什么鬼？/">说出来你可能不信系列（1）原型链到底什么鬼？</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/01/js的变量的作用域/" class="archive-article-date">
-  	<time datetime="2017-03-01T03:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/01/js的变量的作用域/">js的变量的作用域</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -399,8 +305,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
