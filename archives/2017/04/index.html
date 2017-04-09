@@ -6,21 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>express（1） | 文以致远</title>
+  <title>Archives: 2017/4 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####应用层中间件var express= require(‘express’);var app=express;app.MEHTOD(‘path’,function () {
-});path:path可以是字符串，字符串模式，正则表达式。中间件函数能访问函数能够访问请求对象(req)，相应对象(res)以及应用请求/响应循环的下一个中间件函数。下一个中间件函数通常由名为next的变量来表示。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="express（1）">
-<meta property="og:url" content="http://yoursite.com/2017/03/28/express（1）/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="文以致远">
+<meta property="og:url" content="http://yoursite.com/archives/2017/04/index.html">
 <meta property="og:site_name" content="文以致远">
-<meta property="og:description" content="####应用层中间件var express= require(‘express’);var app=express;app.MEHTOD(‘path’,function () {
-});path:path可以是字符串，字符串模式，正则表达式。中间件函数能访问函数能够访问请求对象(req)，相应对象(res)以及应用请求/响应循环的下一个中间件函数。下一个中间件函数通常由名为next的变量来表示。">
-<meta property="og:updated_time" content="2017-03-28T13:57:58.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="express（1）">
-<meta name="twitter:description" content="####应用层中间件var express= require(‘express’);var app=express;app.MEHTOD(‘path’,function () {
-});path:path可以是字符串，字符串模式，正则表达式。中间件函数能访问函数能够访问请求对象(req)，相应对象(res)以及应用请求/响应循环的下一个中间件函数。下一个中间件函数通常由名为next的变量来表示。">
+<meta name="twitter:title" content="文以致远">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -152,155 +145,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-express（1）" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      express（1）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/04/07/双飞翼布局/" class="archive-article-date">
+  	<time datetime="2017-04-07T13:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/04/07/双飞翼布局/">双飞翼布局</a>
     </h1>
   
 
-        
-        <a href="/2017/03/28/express（1）/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:59:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- 依赖 -->
-<p>####应用层中间件<br>var express= require(‘express’);<br>var app=express;<br><!-- 安装了上面的依赖之后，下面的请求方式 METHOD代表请求的方式包括常见的POST,GET之类的--><br>app.MEHTOD(‘path’,function () {</p>
-<p>});<br>path:path可以是字符串，字符串模式，正则表达式。<br>中间件函数能访问函数能够访问请求对象(req)，相应对象(res)以及应用请求/响应循环的下一个中间件函数。<br>下一个中间件函数通常由名为next的变量来表示。<br>中间件函数作用：<br>执行任何代码。<br>对请求和响应对象进行更改。<br>结束请求/响应循环。<br>调用堆栈中的下一个中间件函数。<br>应用层中间件实例：<br>var app=express;<br>app.get(‘/user/:id’,function(req,res,next) {<br>    res.send(‘user’);<br>})<br>路由及中间件系统，针对路径发来的get请求<br>跳过路由器中间件堆栈中剩余的中间件函数，调用next(‘route’)</p>
-<p>####路由层中间件<br>var router = express.Router();<br>var app =express();<br>router.use(function (req,res,next) {</p>
-<p>});<br>router.get(‘/user/:id’,function (req,res,next) {<br>    <!-- 处理get请求的函数 --><br>});</p>
-<p>####错误处理中间件<br>比前面的多一个特征符<br>app.use(function (err,req,res,next) {<br>    console.error(err.stack);<br>    res.status(500).send(‘something broke!’)<br>});</p>
-<p>####内置中间件<br>自v4.x起，Express不再支持connect，除了express.static外</p>
-<h3 id="第三方组件"><a href="#第三方组件" class="headerlink" title="第三方组件"></a>第三方组件</h3><p>先使用npm安装<br>$ npm install cookie-parser<br>var express= require(‘express’);<br>var app=exress;<br>var cookieParser = require(‘cookie-parser’);<br>app.use(cookieParser());</p>
-<h3 id="express-Router"><a href="#express-Router" class="headerlink" title="express.Router()"></a>express.Router()</h3><p>使用express.router类来创建可安装的模块化路由处理程序，Router实例是完整的中间件和路由系统<br>var express = require(‘express’);<br>var router =express.Router();<br>router.use(function timeLog (req,res,next) {<br>    console.log(‘time’,Date.now());<br>    next();<br>});<br>router.get(‘/‘,function (req,res) {<br>    res.send(‘bird home page’);<br>});<br>router.get(‘/about’,function (req,res,) {<br>    res.send(‘about birds’);<br>})<br>module.exports = router;<br><!-- 在程序中装入路由器模块 --><br>var birds = require(‘./birds’);<br>app.use(‘/birds’,birds);<br><!-- 此应用程序现在可处理针对 /birds 和 /birds/about 的请求，调用特定于此路由的 timeLog 中间件函数。 --></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/express（1）/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/07/双飞翼布局/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          双飞翼布局
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">欠债还钱系列（2）不得不面对的闭包</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -323,8 +210,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
