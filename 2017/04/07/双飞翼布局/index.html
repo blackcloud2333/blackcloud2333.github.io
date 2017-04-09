@@ -8,26 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>双飞翼布局 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="圣杯布局最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。其实最难的不是布局本身的思想，而是对背后position和float的不理解。
-
-                                                wo shi shi e">
+  <meta name="description" content="圣杯布局最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。其实最难的不是布局本身的思想，而是对背后position和float的不理解。（1）开始第一步，重置。清除所有默认格式是每一个了解切图的人的第一感觉。    {margin：0;padding:0;}    强烈不推">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双飞翼布局">
 <meta property="og:url" content="http://yoursite.com/2017/04/07/双飞翼布局/index.html">
 <meta property="og:site_name" content="文以致远">
-<meta property="og:description" content="圣杯布局最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。其实最难的不是布局本身的思想，而是对背后position和float的不理解。
-
-                                                wo shi shi e">
+<meta property="og:description" content="圣杯布局最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。其实最难的不是布局本身的思想，而是对背后position和float的不理解。（1）开始第一步，重置。清除所有默认格式是每一个了解切图的人的第一感觉。    {margin：0;padding:0;}    强烈不推">
 <meta property="og:image" content="http://i1.piimg.com/567571/ef6a4b90be361518.png">
 <meta property="og:image" content="http://i4.buimg.com/567571/d12df6979c18b756.png">
 <meta property="og:image" content="http://i2.muimg.com/567571/34495125acec3490.png">
 <meta property="og:image" content="http://i4.buimg.com/567571/ed56bbe21abd06c2.png">
-<meta property="og:updated_time" content="2017-04-09T07:06:33.843Z">
+<meta property="og:updated_time" content="2017-04-09T07:08:51.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="双飞翼布局">
-<meta name="twitter:description" content="圣杯布局最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。其实最难的不是布局本身的思想，而是对背后position和float的不理解。
-
-                                                wo shi shi e">
+<meta name="twitter:description" content="圣杯布局最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。其实最难的不是布局本身的思想，而是对背后position和float的不理解。（1）开始第一步，重置。清除所有默认格式是每一个了解切图的人的第一感觉。    {margin：0;padding:0;}    强烈不推">
 <meta name="twitter:image" content="http://i1.piimg.com/567571/ef6a4b90be361518.png">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
@@ -180,12 +174,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><p>最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。<br>其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。<br>其实最难的不是布局本身的思想，而是对背后position和float的不理解。</p>
-<p><code></code></p>
-<p><html lang="en"><br>    <head><br>        <meta charset="utf-8"><br>    </head><br>    <link rel="stylesheet" href="index.css"><br>    <body><br>    <div class="container"><br>        <article><br>            <div class="center">wo shi shi e</div><br>            <div class="left"></div><br>            <div class="right"><br>            </div><br>        </article><br>    </div><br>    <br>    </body><br></html><br><br>下面所有的尝试都建立在上面的结构上面<br>（1）开始第一步，重置。<br>清除所有默认格式是每一个了解切图的人的第一感觉。<br>    <em>{margin：0;padding:0;}<br>    强烈不推荐上面的这种写法，但是为了简单，就这样写了先。<br>（2）正式主体部分开始<br>大部分的萌新，心里其实也都有数，既然三列布局肯定是涉及到浮动的问题，或者下意识的想到了全部左浮动。<br>为了看清楚给所有的盒子都染了颜色<br><code>
+        <h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><p>最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。<br>其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。<br>其实最难的不是布局本身的思想，而是对背后position和float的不理解。<br>（1）开始第一步，重置。<br>清除所有默认格式是每一个了解切图的人的第一感觉。<br>    <em>{margin：0;padding:0;}<br>    强烈不推荐上面的这种写法，但是为了简单，就这样写了先。<br>（2）正式主体部分开始<br>大部分的萌新，心里其实也都有数，既然三列布局肯定是涉及到浮动的问题，或者下意识的想到了全部左浮动。<br>为了看清楚给所有的盒子都染了颜色<br><code>
     </code></em>{ margin:0;padding:0;}<br>article .center，.left， .right {<br>    float: left;<br>}<br>article .center {<br>    width: 100%;<br>    background-color: red;<br>}<br>article .left {<br>    width: 200px;<br>    height: 120px;<br>    background-color: green;<br>}<br>article .right {<br>    width: 120px;一种方法呢，<br>    height: 120px;<br>    background-color: yellow;<br>}<br><br>初步的成果可能代码就写成这样了<br><img src="http://i1.piimg.com/567571/ef6a4b90be361518.png" alt=""><br>但是明显不符合我们的要求，为什么呢，因为width设置了100%，然后全部左浮动的结果就是所有的都所有的都变成了块级元素,然后一个个的排列着，所以出现这种情况，那么怎么解决呢？<br>margin的负值是一个很好的解决方法，但是在解决之前要先说下总体的圣杯布局和双飞翼布局的思路。<br>两种布局的思路都是先把center部分固定到指定的位置，然后再对左右两侧进行固定。<br>所以这里要先把左右需要的先预留出来因此要给一部分padding给左右两侧<br><code><br>    .container {<br>    overflow:hidden;<br>    zoom:1;<br>    padding:0 120px 0 200px;<br>}<br></code><br>接下来就出现了这种情况<br><img src="http://i4.buimg.com/567571/d12df6979c18b756.png" alt=""><br>接下来就是让左边的向左先移到窗口的边缘部分然后再想办法把左边部分“推”上去。<br>右边部分也一样，因此<br><code><br>    *{ margin:0;padding:0;}<br>    .container {<br>    overflow:hidden;<br>    zoom:1;<br>    padding:0 120px 0 200px;<br>    }<br>article .center，.left， .right {<br>    float: left;<br>}<br>article .center {<br>    width: 100%;<br>    background-color: red;<br>}<br>article .left {<br>    width: 200px;<br>    height: 120px;<br>    left:-200px;<br>    background-color: green;<br>}<br>article .right {<br>    width: 120px;一种方法呢，<br>    height: 120px;<br>    left:120px;<br>    background-color: yellow;<br>}<br></code><br>上面的left:-200px;<br>对绝对定位的元素，是到包含块左侧边缘的距离<br>对相对定位的原件，如果原件在未定位的情况下从正常流中的位置离开的偏移。<br>而对于left块就是要先把它偏移到左边。<br>同时要设置margin-left为负值，把margin-left设置成负值就相当于把left块向右挤了一部分，这样就可以把左侧的“推”上去。<br><img src="http://i2.muimg.com/567571/34495125acec3490.png" alt=""><br>同样的想把右侧的“推”上去，就得先把right块脱离流，然后才能推上去<br>margin-left:-120px;//本身的长度<br>这样才能完成相应的布局。</p>
-<h3 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h3><p>双飞翼布局相对来说会好很多，主要就是为center添加了一个壳子，相当于不用container去留空间了，直接在center的壳子和center之间开空间就能为左右两侧的块腾出位置了<br><code></code></p>
-<p><html lang="en"><br>    <head><br>        <meta charset="utf-8"><br>    </head><br>    <style></p>
+<h3 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h3><p>双飞翼布局相对来说会好很多，主要就是为center添加了一个壳子，相当于不用container去留空间了，直接在center的壳子和center之间开空间就能为左右两侧的块腾出位置了<br><code><br>    <style></p>
 <pre><code>#main {overflow: hidden;zoom: 1;background-color: #eee;}/*这里不需要加padding了*/
 .m_content, .m_leftside, .m_rightside {float: left;}
 .m_content {width: 100%;}
@@ -198,7 +189,7 @@
     height: 80px;
     margin:20px;
 }
-</code></pre><p></style><br>    <body><br>   <div id="main"><br>    <div class="m_content"><br>        <!--正真的主体开始--><br>        <div class="m_c_wrap">这里是主体</div><br>    </div><br>    <div class="m_leftside">这是左侧边栏</div><br>    <div class="m_rightside">这是右侧边栏<br>    <div class="self-box"></div><br>    </div><br></div><br>    </body><br></html><br><br>实际的效果如下图<br><img src="http://i4.buimg.com/567571/ed56bbe21abd06c2.png" alt=""><br>就是这样了，而且还形成了自适应的布局，相当于把左右俩块挤到container两侧。</p>
+</code></pre><p></style><br></code><br>实际的效果如下图<br><img src="http://i4.buimg.com/567571/ed56bbe21abd06c2.png" alt=""><br>就是这样了，而且还形成了自适应的布局，相当于把左右俩块挤到container两侧。</p>
 
       
 
