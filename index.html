@@ -147,6 +147,60 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-letcode-1-twosum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/31/letcode-1-twosum/">letcode#1 twosum</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/31/letcode-1-twosum/" class="archive-article-date">
+  	<time datetime="2017-05-31T13:29:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天第一次正式的刷算法题，然后被letcode上的一个相当简单的问题给搞了一下<br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,</p>
+<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].<br>Subscribe to see which companies asked this question.<br>大致上就是说要求：给了一个target，然后让你在数组里面找出x+y=target中x,y的下标。<br>常见的思路：<br>暴力查询：<br>    <pre><br>    var twoSum = function(nums, target) {<br>    var i,len = nums.length;<br>    for (i=0;i<len-1;i++) {="" for="" (j="i+1;j<len;j++)" if="" (nums[i]="" +="" nums[j]="==" target)="" return="" [i,j];="" }="" };="" <="" pre=""><br>    然后提交之后没办法通过，大概意思是用的方法太蠢了，时间复杂度太高。<br>    想了一下时间复杂度O(n^2),的确有点高。<br>    第二种方法就是hash了，利用map来一边查询一边result推进hash表当中<br>    首先理解思路：<br>    先遍历一遍整个数组确认能拿到每一个值<br>    然后result=target-nums[i];<br>    得到result，如果在hash表当已经有了result，那么直接输出map当中result对应的value(相应的数组下标);<br>    如果hash表当中没有相应的result，比如5(result)=8(target)-3(num[0])<br>    存的时候要存一种key:value的形式，map[num[i]]=i;(因为最后需要的是下标);<br>    <pre><br>    var twoSum = function(nums, target) {<br>    var map = {};<br>    for(var i = 0 ; i &lt; nums.length ; i++){<br>        var v = nums[i];<br>        if(map[target-v] &gt;= 0){<br>            target = x + v<br>            return [map[target-v],i]<br>        } else {<br>            map[v] = i;<br>        }<br>    }<br>};<br>    </pre><br>    当然使用hash也是一样的道理。<br>   很重要:推进hash/map当中的是nums[i],不是result;</len-1;i++)></pre></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/31/letcode-1-twosum/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-webpack1和webpack2的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -616,57 +670,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/03/15/bootstrap页面草稿/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-“说出来你可能不信（2），bootstrap贼好用？”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/“说出来你可能不信（2），bootstrap贼好用？”/">“说出来你可能不信（2），bootstrap贼好用（1）？”</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/13/“说出来你可能不信（2），bootstrap贼好用？”/" class="archive-article-date">
-  	<time datetime="2017-03-13T12:58:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说出来你可能不信，对于我这种立志走数据向的前端来讲，最近自己在重构自己很久很久以前写的捞比网页的时候，我发现自己设计网页是极其不靠谱的。画了两晚上，就搞出个结构图，然后试了试，写了一点，自己都觉得自己什么鬼……。我能怎么办，不过后来我google出来一个东西叫bootstrap的东西，按照自己的结构图写了一点，觉得还不错哎。<br><img src="http://p1.bqimg.com/567571/3da5aaece1410964.png" alt=""><br>大概就是这个样子吧，可能大部分人觉得还是很丑，不过对比一下<br><img src="http://p1.bpimg.com/567571/d1e72c546af52db4.png" alt=""><br><img src="http://p1.bpimg.com/567571/79e8ae9490563d78.png" alt=""><br>大概感觉就会觉得第一个神TM的漂亮。所以bootstrap对于一个没有设计师的团队来讲其实是很有用的。<br>说到bootstrap，那么核心的思想，个人感觉就是css进行了封装，然后给一个接口给你用，而且还提供自己改版的机会（如果你懂less或者sass的话），简直不要太赞了。<br>那么详细来说一下bootstrap吧，bootstrap个人感觉形式和JQuery是很像的，都是通过一些选择器来操作的。<br>bootstrap最赞的感觉还是3.0，完全重构之后基于响应式的，这对于一个入门之后迷茫的前端开发者来讲的确是快速的开发一个pc+移动端都适配的网页的不二选择。所以，现在个人也在磨这个东西。<br>接下来也会不定期的分享自己的踩坑历程。<br>注：本人也是刚刚入门的小前端，如果哪里不对，欢迎各位大大指正。<br>啊嘞，我还是滚去改我的网页吧，乐观的话，月底应该网站的前端加后台就可以做的差不多了，到时候我会上线一下自己写的网页试试，虽然很简单，但是毕竟是自己的亲儿子。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/“说出来你可能不信（2），bootstrap贼好用？”/">展开全文 >></a>
         </p>
       
 
