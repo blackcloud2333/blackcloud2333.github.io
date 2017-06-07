@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>文以致远</title>
+  <title>Archives: 2017/6 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
 <meta property="og:site_name" content="文以致远">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文以致远">
@@ -147,558 +147,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-leetcode27-removeElement-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/07/leetcode27-removeElement-md/">leetcode7 removeElement.md</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/07/leetcode27-removeElement-md/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/07/leetcode27-removeElement-md/" class="archive-article-date">
   	<time datetime="2017-06-07T07:02:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##leetcode7 remove Element<br>现在目标是先把leetcode上面easy的题目先刷一遍，所以刷题的顺序有点跳跃，但是慢慢的都会补上的。<br>Given an array and a value, remove all instances of that value in place and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.<br>Example: Given input array nums = [3,2,2,3], val = 3<br>Your function should return length = 2, with the first two elements of nums being 2.<br>删除某个数组当中所有指定的某个数字，返回删除完特定数字之后的数组的长度。<br>(下面的思路是不考虑新开数组的前提下，也尝试了新开数组的方法也可以，但是<br>leetcode，没办法accept(摊手)，所以暂时就先拿这个了)<br>思路：删除val首先要做一遍遍历，for一次，拿到所有的本数组中所有的元素，然后依次和已知的val比一下，然后如果不相等那么就用现在的这个值覆盖nums前面的值，最后输出数组的长度就OK了.</p>
-<p><pre><br>var removeElement = function(nums, val) {<br>    var len=nums.length;<br>    if(len===0) return len;<br>    var count=0;<br>    for(var i=0;i&lt; len;i++){<br>        if(nums[i]!==val){<br>            nums[count++]=nums[i];<br>        }<br>    }<br>    return count;<br>};<br></pre><br>暂时这样写是被accept的，但是边界检查总感觉少了点什么，感觉会是一个坑，不过后面还会再刷，那时候再来补充吧。<br>另外，return的时候，不能return nums.length，因为存在着作用域的问题，直接在最外层returnnums的时候依然会<br>return到的值是前面未经改变过的nums的值。<br>当然实在想返回nums.length的话，应该也行，但是前面的代码要大改，不能这样使用，等完成之后再来补充吧。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/07/leetcode27-removeElement-md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-leetcode1-twoSum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/31/leetcode1-twoSum/">letcode#1 twosum</a>
+      <a class="archive-article-title" href="/2017/06/07/leetcode27-removeElement-md/">leetcode7 removeElement.md</a>
     </h1>
   
 
-        
-        <a href="/2017/05/31/leetcode1-twoSum/" class="archive-article-date">
-  	<time datetime="2017-05-31T13:29:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天第一次正式的刷算法题，然后被letcode上的一个相当简单的问题给搞了一下<br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,</p>
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].<br>Subscribe to see which companies asked this question.<br>大致上就是说要求：给了一个target，然后让你在数组里面找出x+y=target中x,y的下标。<br>常见的思路：<br>暴力查询：</p>
-<p><pre><br>    var twoSum = function(nums, target) {<br>    var i,len = nums.length;<br>     for (i=0;i &lt; len-1;i++) {<br>        for (j=i+1;j &lt; len;j++) {<br>            if (nums[i] + nums[j] === target) {<br>                return [i,j];<br>            }<br>        }<br>    }<br>};<br></pre><br>    然后提交之后没办法通过，大概意思是用的方法太蠢了，时间复杂度太高。<br>    想了一下时间复杂度O(n^2),的确有点高。<br>    第二种方法就是hash了，利用map来一边查询一边result推进hash表当中<br>    首先理解思路：<br>    先遍历一遍整个数组确认能拿到每一个值<br>    然后result=target-nums[i];<br>    得到result，如果在hash表当已经有了result，那么直接输出map当中result对应的value(相应的数组下标);<br>    如果hash表当中没有相应的result，比如5(result)=8(target)-3(num[0])<br>    存的时候要存一种key:value的形式，map[num[i]]=i;(因为最后需要的是下标);<br>    <pre><br>    var twoSum = function(nums, target) {<br>    var map = {};<br>    for(var i = 0 ; i &lt; nums.length ; i++){<br>        var v = nums[i];<br>        if(map[target-v] &gt;= 0){<br>            target = x + v<br>            return [map[target-v],i]<br>        } else {<br>            map[v] = i;<br>        }<br>    }<br>};<br>    </pre><br>    当然使用hash也是一样的道理。<br>   很重要:推进hash/map当中的是nums[i],不是result;</p>
-<hr>
-<p>2017.6.6追加</p>
-<p>刚刚刷一道数组去重的问题的时候也发现了一个问题，数组去重问题用一种类似hash的结构也可以完美的解决，而且时间复杂度比暴力检索要好的多<br>arr=[1,5,2,5,5,8,2];<br>一个无序的数组。如果是暴力检索，的话</p>
-<p><pre><br>   var removeDup = function(arr){<br>        var res=[];<br>        for(var i=0; i&lt; arr.length;i++){<br>            for( var j=i+1; j&lt; arr.length ;j++){<br>            if(arr[i]===arr[j]){<br>                j=++i;<br>            }<br>        }<br>        res.push(arr[i]);<br>    }<br>    return res;<br>}<br>console.log(removeDup([1,2,5,1,6]));<br></pre><br>但是这样的方法的确是有点蠢，于是苦思冥想，觉得这个解决方案和第一个twosum解决方案完全是相似的</p>
-<p><pre><br>    var remove=function(arr){<br>    var res=[];<br>    var hash={};<br>    for(var i=0;i&lt; arr.length;i++){<br>    if(!hash[arr[i]]){<br>            res.push(arr[i]);<br>            hash[arr[i]]=1;<br>        }<br>    }<br>    return res;<br>}<br>console.log(remove([1,5,2,5,5,8,2]));<br></pre><br>两个题的思路都是依靠一个key:value;来达到一种利用hash查询的功能，即利用已有的数组中的值和hash当中的值进行比较得出到底有没有重复出现的值，前面是获取到这个值拿来用，后者是排除到这个值。<br>但是这种方法依然是存在着不少的问题的具体的，可以看这个篇文章，本人认为这篇文章写得很棒也很全面。<br><a href="https://www.toobug.net/article/array_unique_in_javascript.html" target="_blank" rel="external">Google</a></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/31/leetcode1-twoSum/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
   
-    <article id="post-webpack1和webpack2的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/19/webpack1和webpack2的坑/">webpack1和webpack2的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/19/webpack1和webpack2的坑/" class="archive-article-date">
-  	<time datetime="2017-04-19T12:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一坑：<br><img src="http://i4.buimg.com/567571/39098cc00fba31fb.png" alt=""><br>绝对路径未定义，webpack1和webpack2是不一样的。等下去找官网看<br>解决方法：<br>const path = require(‘path’);<br>module.exports = {<br>    entry:’./src/script/main.js’,<br>    output: {<br>        path: path.resolve(__dirname, ‘./dist/js’),<br>        filename: ‘bundle.js’<br>    }<br>}<br>这样就行了<br>第二个坑<br>var htmlWebpackPlugin = require (‘html-webpack-plugin’);<br>然后在html模板中写的时候&lt;% = htmlWebpackPlugin %&gt;<br>上面的ejs语法当中必须用驼峰式写法否则就会报错。</p>
-<p>第三个坑<br>还是关于ejs语法的<br>在ejs中写js的时候每一行一行都要以这样的&lt;% %&gt;形式否则就会报错，<br>而且一个问题就是&lt;%= %&gt;这里的这个等于一定要紧紧的靠着第一个%否则也会报错。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/19/webpack1和webpack2的坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-实现绝对定位元素的居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/09/实现绝对定位元素的居中/">实现绝对定位元素的居中</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/09/实现绝对定位元素的居中/" class="archive-article-date">
-  	<time datetime="2017-04-09T08:28:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/09/实现绝对定位元素的居中/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-T字形布布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/09/T字形布布局/">T字形布布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/09/T字形布布局/" class="archive-article-date">
-  	<time datetime="2017-04-09T07:12:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/09/T字形布布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-双飞翼布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/07/双飞翼布局/">双飞翼布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/07/双飞翼布局/" class="archive-article-date">
-  	<time datetime="2017-04-07T13:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h3><p>最近在温习css的基础知识，发现好多都忘了，正好拿这两个经典的布局来练手，同时发现一些问题，现在再来总结一次。<br>其实无论是双飞翼布局还是圣杯布局从表面上看其实都是常见的三列布局。<br>其实最难的不是布局本身的思想，而是对背后position和float的不理解。<br>（1）开始第一步，重置。<br>清除所有默认格式是每一个了解切图的人的第一感觉。<br>    <em>{margin：0;padding:0;}<br>    强烈不推荐上面的这种写法，但是为了简单，就这样写了先。<br>（2）正式主体部分开始<br>大部分的萌新，心里其实也都有数，既然三列布局肯定是涉及到浮动的问题，或者下意识的想到了全部左浮动。<br>为了看清楚给所有的盒子都染了颜色<br><code>
-    </code></em>{ margin:0;padding:0;}<br>article .center，.left， .right {<br>    float: left;<br>}<br>article .center {<br>    width: 100%;<br>    background-color: red;<br>}<br>article .left {<br>    width: 200px;<br>    height: 120px;<br>    background-color: green;<br>}<br>article .right {<br>    width: 120px;一种方法呢，<br>    height: 120px;<br>    background-color: yellow;<br>}<br><br>初步的成果可能代码就写成这样了<br><img src="http://i1.piimg.com/567571/ef6a4b90be361518.png" alt=""><br>但是明显不符合我们的要求，为什么呢，因为width设置了100%，然后全部左浮动的结果就是所有的都所有的都变成了块级元素,然后一个个的排列着，所以出现这种情况，那么怎么解决呢？<br>margin的负值是一个很好的解决方法，但是在解决之前要先说下总体的圣杯布局和双飞翼布局的思路。<br>两种布局的思路都是先把center部分固定到指定的位置，然后再对左右两侧进行固定。<br>所以这里要先把左右需要的先预留出来因此要给一部分padding给左右两侧<br><code><br>    .container {<br>    overflow:hidden;<br>    zoom:1;<br>    padding:0 120px 0 200px;<br>}<br></code><br>接下来就出现了这种情况<br><img src="http://i4.buimg.com/567571/d12df6979c18b756.png" alt=""><br>接下来就是让左边的向左先移到窗口的边缘部分然后再想办法把左边部分“推”上去。<br>右边部分也一样，因此<br><code><br>    *{ margin:0;padding:0;}<br>    .container {<br>    overflow:hidden;<br>    zoom:1;<br>    padding:0 120px 0 200px;<br>    }<br>article .center，.left， .right {<br>    float: left;<br>}<br>article .center {<br>    width: 100%;<br>    background-color: red;<br>}<br>article .left {<br>    width: 200px;<br>    height: 120px;<br>    left:-200px;<br>    background-color: green;<br>}<br>article .right {<br>    width: 120px;一种方法呢，<br>    height: 120px;<br>    left:120px;<br>    background-color: yellow;<br>}<br></code><br>上面的left:-200px;<br>对绝对定位的元素，是到包含块左侧边缘的距离<br>对相对定位的原件，如果原件在未定位的情况下从正常流中的位置离开的偏移。<br>而对于left块就是要先把它偏移到左边。<br>同时要设置margin-left为负值，把margin-left设置成负值就相当于把left块向右挤了一部分，这样就可以把左侧的“推”上去。<br><img src="http://i2.muimg.com/567571/34495125acec3490.png" alt=""><br>同样的想把右侧的“推”上去，就得先把right块脱离流，然后才能推上去<br>margin-left:-120px;//本身的长度<br>这样才能完成相应的布局。</p>
-<h3 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h3><p>双飞翼布局相对来说会好很多，主要就是为center添加了一个壳子，相当于不用container去留空间了，直接在center的壳子和center之间开空间就能为左右两侧的块腾出位置了<br><code><br>    <style></p>
-<pre><code>#main {overflow: hidden;zoom: 1;background-color: #eee;}/*这里不需要加padding了*/
-.m_content, .m_leftside, .m_rightside {float: left;}
-.m_content {width: 100%;}
-/*用左右边距将左右边栏的位置预留出来*/
-.m_c_wrap {margin-left: 220px;margin-right:300px; background-color: red;}
-.m_leftside {width: 220px;margin-left: -100%;background-color: green;}
-.m_rightside {width: 300px;margin-left: -300px;background-color: orange;}
-.self-box {
-    width: 80px;
-    height: 80px;
-    margin:20px;
-}
-</code></pre><p></style><br></code><br>实际的效果如下图<br><img src="http://i4.buimg.com/567571/ed56bbe21abd06c2.png" alt=""><br>就是这样了，而且还形成了三列等高，相当于把左右俩块挤到container两侧。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/07/双飞翼布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-express（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/28/express（1）/">express（1）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/28/express（1）/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:59:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- 依赖 -->
-<p>####应用层中间件<br>var express= require(‘express’);<br>var app=express;<br><!-- 安装了上面的依赖之后，下面的请求方式 METHOD代表请求的方式包括常见的POST,GET之类的--><br>app.MEHTOD(‘path’,function () {</p>
-<p>});<br>path:path可以是字符串，字符串模式，正则表达式。<br>中间件函数能访问函数能够访问请求对象(req)，相应对象(res)以及应用请求/响应循环的下一个中间件函数。<br>下一个中间件函数通常由名为next的变量来表示。<br>中间件函数作用：<br>执行任何代码。<br>对请求和响应对象进行更改。<br>结束请求/响应循环。<br>调用堆栈中的下一个中间件函数。<br>应用层中间件实例：<br>var app=express;<br>app.get(‘/user/:id’,function(req,res,next) {<br>    res.send(‘user’);<br>})<br>路由及中间件系统，针对路径发来的get请求<br>跳过路由器中间件堆栈中剩余的中间件函数，调用next(‘route’)</p>
-<p>####路由层中间件<br>var router = express.Router();<br>var app =express();<br>router.use(function (req,res,next) {</p>
-<p>});<br>router.get(‘/user/:id’,function (req,res,next) {<br>    <!-- 处理get请求的函数 --><br>});</p>
-<p>####错误处理中间件<br>比前面的多一个特征符<br>app.use(function (err,req,res,next) {<br>    console.error(err.stack);<br>    res.status(500).send(‘something broke!’)<br>});</p>
-<p>####内置中间件<br>自v4.x起，Express不再支持connect，除了express.static外</p>
-<h3 id="第三方组件"><a href="#第三方组件" class="headerlink" title="第三方组件"></a>第三方组件</h3><p>先使用npm安装<br>$ npm install cookie-parser<br>var express= require(‘express’);<br>var app=exress;<br>var cookieParser = require(‘cookie-parser’);<br>app.use(cookieParser());</p>
-<h3 id="express-Router"><a href="#express-Router" class="headerlink" title="express.Router()"></a>express.Router()</h3><p>使用express.router类来创建可安装的模块化路由处理程序，Router实例是完整的中间件和路由系统<br>var express = require(‘express’);<br>var router =express.Router();<br>router.use(function timeLog (req,res,next) {<br>    console.log(‘time’,Date.now());<br>    next();<br>});<br>router.get(‘/‘,function (req,res) {<br>    res.send(‘bird home page’);<br>});<br>router.get(‘/about’,function (req,res,) {<br>    res.send(‘about birds’);<br>})<br>module.exports = router;<br><!-- 在程序中装入路由器模块 --><br>var birds = require(‘./birds’);<br>app.use(‘/birds’,birds);<br><!-- 此应用程序现在可处理针对 /birds 和 /birds/about 的请求，调用特定于此路由的 timeLog 中间件函数。 --></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/28/express（1）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-欠债还钱系列（2）不得不面对的闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">欠债还钱系列（2）不得不面对的闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" class="archive-article-date">
-  	<time datetime="2017-03-22T13:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如<br>.闭包 下面五段代码分别输出什么？并且什么时候输出什么？<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    console.log(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout(function() {<br>        console.log(i);<br>    }, 1000 <em> i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i </em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function() {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i </em> 1000);<br>}<br></code><br>这道题就是很经典的闭包的面试题，以及他的几个变种，但是核心来讲还是闭包的问题。<br>闭包：一个有权访问另一个函数作用域的函数。<br>前两道，相信大家都看烂了，所以也不多表，在这里我想说的是第三道，这个涉及了IIFE,闭包，js的单线程，以及匿名函数的作用域等问题。<br>关于这道题的IIFE（立即执行函数）<br><code><br>(function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>    </em></code><br>上面的其实可以这样写<br><code><br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i  1000);<br>    })；<br>    (i);<br></code><br>这样写可能比较好理解，也即是先声明了一个函数表达式，后面的调用这个函数表达式，并且把i传进函数表达式。<br>而且函数通过他们的名字被调用时，参数会被传递，而当函数表达式被立即调用时，参数也会被立即传递。一个立即调用的函数表达式可以锁定当时的状态。<br>因此这样函数表达式外的i就可以顺利的被括号内的function调用和访问了，这样就实现了闭包。<br>如果你不理解这样的写法那么可以先这样写<br><code><br>for(var i=0;i<5;i++){ function="" ret(i){="" timer(){="" console.log(i);="" }="" settimeout(i*1000);="" ret(i);="" <="" code=""><br>这样的话其实会好理解很多，也可以实现闭包。所以结果也就不奇怪了。<br>对于第四题<br>因为根本没有传i进function()里面去，所以循环里面是立即执行的函数，会给每个匿名的函数执行setTimeout，而由于JS的单线程，5个setTimeout()会等待for循环完了再执行，因此会连续的输出5个5.<br>至于第5道，我认为也是很有意思的<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i * 1000);<br>}<br></code><br>这个考察了对callback的理解，<br>(function(i) {<br>        console.log(i);<br>    })(i)；<br>    这个是一个立即执行的函数的表达式而不是函数！不是函数！不是函数！<br>    而callback要求的是一个函数，因此肯定会报错<br>      throw new TypeError(‘“callback” argument must be a function’);</5;i++){></code></p>
-<pre><code>参考资料：https://segmentfault.com/q/1010000008766695?_ea=1736049
-          https://zhuanlan.zhihu.com/p/25855075（强烈推荐去看，比我写的好的多，通俗易懂也更有技术深度）。
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-欠债还钱系列（1—）Enumberable是什么？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/22/欠债还钱系列（1—）Enumberable是什么？/">欠债还钱系列（1—）Enumberable是什么？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/22/欠债还钱系列（1—）Enumberable是什么？/" class="archive-article-date">
-  	<time datetime="2017-03-22T12:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欠债还钱，天经地义哟。<br>今天就来还债咯，最近一直在准备实习生的笔试（不要问我为啥不直接面试，简历写的可能比较烂23333）。然后前几天的时候刷到的这个东西，刚看的时候觉得一脸懵逼什么鬼？？<br>不得不说MDN是个好东西（吃我一波安利），好了废话差不多了，来点干货。</p>
-<p>枚举对于大多数人入门前端之后的人来讲可能是经常会用到的一种东西，但是你真的了解它吗？<br>而对于这些对象的属性，其实JS内部内置了一些方法来获取，或者是判断对象的一组或者一个属性。那么Enmberable就属于这个系列了。<br><img src="http://i4.buimg.com/567571/ba711579e3d82453.png" alt=""><br>这个差不多就是介绍了，可能你看了会一脸懵逼，WTF???<br>而Enumberable属于影响属性遍历的特性，如果这个值为true，证明是可枚举的，否则表明是不可以枚举的。<br>Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性）组成的数组,但不会获取原型链上的属性。该数组对元素是 obj 自身拥有的枚举或不可枚举属性名称字符串，数组中枚举属性的顺序与通过for…in（或 Object.keys()）迭代该对象属性时一致。 数组中不可枚举属性的顺序未定。<br>for…in()操作的主要目的就是遍历对象的属性而且还可以使用hasOwnProperty()进行过滤。<br>对于不可枚举的属性也可以通过propertyIsEnumerable()方法进行检测。<br>深入的研究还没怎么做，这个大概就是个人的理解了。</p>
-<p>参考资料：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/22/欠债还钱系列（1—）Enumberable是什么？/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-笔试总结-新美大" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/21/笔试总结-新美大/">笔试总结--新美大</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/21/笔试总结-新美大/" class="archive-article-date">
-  	<time datetime="2017-03-21T14:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为师兄讲新美大还可以，不算顶尖的大公司，但是也没有很差所以就在前段时间内推了新美大的实习生，然后估计因为简历写的很烂，所以没接到电面。<br>于是在刚刚做完了笔试，来总结一发。<br>总体来说：很基础，但是其中考的还是很细的。<br>第一<br>里面考了很多的基础的算法复杂度的题，比如快排，堆排，冒泡，插入，大概就这四个。<br>第二<br>还考了跨域的问题，如何跨域，这个明天再写，现在还没研究明白。<br>第三<br>考的感觉有的地方还是有点偏(也有可能我自己的基础差)，常见的闭包，作用链，this,一个没考，印象比较深刻的是obj.enumerable相关的问题，这个我会再次开一篇讲一下自己学习之后的成果，然后还考了一些数据结构，比如二叉树。<br>第四<br>编程题很容易，但是前提是读的懂题目和要求。读了8分钟左右的题和预置代码，然后写思路，其实就是求两个数组的交集，然后以数组的形式输出这个交集，但是由于审题的时候被预置的几个参数搞蒙了，不过后来也是过了。<br>第五<br>还有就是http,DNS解析协议竟然也没考，计算机网络也没考，和我预想中的可能有点不一样。<br>第六<br>这次笔试比较奇怪的是HTML和css的知识也没怎么触及，可能是留在面试吧。</p>
-<p>个人总结：基础还是不够细，总体来说个人的基础还是有很多的地方没复习到，接下来的一段时间主要是搞一搞基础的算法，然后梳理一下数据结构和操作系统的知识，。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/21/笔试总结-新美大/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -720,9 +209,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
