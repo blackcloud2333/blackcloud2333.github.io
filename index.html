@@ -147,6 +147,62 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode-35-Search-Insert-Position" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/18/leetcode-35-Search-Insert-Position/">leetcode#35. Search Insert Position</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/18/leetcode-35-Search-Insert-Position/" class="archive-article-date">
+  	<time datetime="2017-06-18T13:16:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You may assume no duplicates in the array.</p>
+<p>Here are few examples.<br>[1,3,5,6], 5 → 2<br>[1,3,5,6], 2 → 1<br>[1,3,5,6], 7 → 4<br>[1,3,5,6], 0 → 0</p>
+<p>Subscribe to see which companies asked this question.<br>题干的意思大致上是说，在数组当中进行搜索如果target的话，那么找出target，如果没有的话就把target插入进去，并且找出来插入的位置。</p>
+<p><pre><br>var searchInsert = function(nums, target) {<br>    if(nums!==””&amp;&amp;target!==””){<br>        if(nums.indexOf(target)!==-1){<br>            return nums.indexOf(target);<br>        }else{<br>            nums.push(target);<br>            nums.sort(function(a,b){<br>                return a-b;<br>            });<br>            return nums.indexOf(target);<br>        }<br>    }else{<br>        return 0;<br>    }<br>};<br></pre><br>上面是accepted的，但是感觉很麻烦，主要是今天发现了一个忽略很久的东西，sort()我一直以为是按照数值大小排序的然而并不是而是按照Unicode码进行排序的，所以如果出现了10这个数字，就会发生异常，直接使用sort()很有可能是10出现在最前面，所以明显不对，解决方案就是在sort里面写一个比较函数</p>
+<p><pre><br>    arr.sort(function(a,b){<br>        return a-b;<br>    })<br></pre><br>这样的话，那么就实现了对arr的按照数字大小进行排序。<br>当然这道题还有其他更简单的解决方案，后面二刷的时候再来继续补充。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/18/leetcode-35-Search-Insert-Position/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-leetcode28-Implement-strStr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -400,56 +456,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/04/09/实现绝对定位元素的居中/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-T字形布布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/09/T字形布布局/">T字形布布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/09/T字形布布局/" class="archive-article-date">
-  	<time datetime="2017-04-09T07:12:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/09/T字形布布局/">展开全文 >></a>
         </p>
       
 
