@@ -6,14 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 文以致远</title>
+  <title>刷题总结1 返回拓展名 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。
+例如，输入 emoji.png，返回 .png。
+这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
+看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址
+测试完之后我相信很多人一遍甚至两次提交都没法通过。所以我愈发的觉得边界条件是一个程序稳">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刷题总结1 返回拓展名">
+<meta property="og:url" content="http://yoursite.com/2017/07/07/刷题总结1-返回拓展名/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。
+例如，输入 emoji.png，返回 .png。
+这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
+看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址
+测试完之后我相信很多人一遍甚至两次提交都没法通过。所以我愈发的觉得边界条件是一个程序稳">
+<meta property="og:updated_time" content="2017-07-07T14:11:11.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文以致远">
+<meta name="twitter:title" content="刷题总结1 返回拓展名">
+<meta name="twitter:description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。
+例如，输入 emoji.png，返回 .png。
+这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
+看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址
+测试完之后我相信很多人一遍甚至两次提交都没法通过。所以我愈发的觉得边界条件是一个程序稳">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -145,296 +161,144 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-刷题总结1-返回拓展名" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      刷题总结1 返回拓展名
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/07/刷题总结1-返回拓展名/" class="archive-article-date">
+
+        
+        <a href="/2017/07/07/刷题总结1-返回拓展名/" class="archive-article-date">
   	<time datetime="2017-07-07T14:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/刷题总结1-返回拓展名/">刷题总结1 返回拓展名</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。</p>
+<p>例如，输入 emoji.png，返回 .png。</p>
+<pre><code>这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
+</code></pre><p>看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？<br>如果有兴趣的话，可以自己试试。<br>下面是在线测试的地址</p>
+<p><href https:="" scriptoj.com=""><br>测试完之后我相信很多人一遍甚至两次提交都没法通过。<br>所以我愈发的觉得边界条件是一个程序稳定性的保证。<br>下面是我个人写的两种解决方案<br>第一种解决方案</href></p>
+<p><pre><br>    const extname = (filename) =&gt; {<br>  /<em> TODO </em>/<br>  let i ;<br>  const len = filename.length;<br>  for(i=len-1;i&gt;=0;i–) {<br>    if(filename[i] === ‘.’&amp;&amp;i!=0) {<br>      return filename.substring(i,len);<br>    }<br>  }<br>  return ‘’;<br>}<br></pre><br>第二种解决方案</p>
+<p><pre><br>    const extname = (filename) =&gt; {<br>  /<em> TODO </em>/<br>  var len = filename.length;<br>  if(filename[0] === ‘.’ || filename[len-1] === ‘.’ || filename.includes(‘.’) === false )<br>    return “”;<br>  for(i=len-1;i&gt;=0 ;i –) {<br>    if(filename[i] === ‘.’){<br>      return  filename.slice(i, len);<br>    }<br>  }<br>}<br></pre><br>我觉得应该还是有第三种解决方案的(正则)<br>但是有一个最重要情况是我第一次提交没有考虑到的:’hell0.ab.cd.jpg’，像这样的测试用例，是很容易被忽略的，另外本身这个测试还存在着一定的问题就是’12233.jpg’，这种测试用例明明在本地是跑不通的，但是在线跑就没问题，这个是这个题目的测试用例本身写的有问题的地方。<br>上面的第一个测试用例就决定了在进行遍历的时候一定是不能从0-len-1这样进行遍历的，否则会陷入自己觉得明明没错但是实际却通过不了的困境。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/07/刷题总结1-返回拓展名/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/18/leetcode-35-Search-Insert-Position/" class="archive-article-date">
-  	<time datetime="2017-06-18T13:16:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-18</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/leetcode-35-Search-Insert-Position/">leetcode#35. Search Insert Position</a>
-    </h1>
+  
+    <a href="/2017/06/18/leetcode-35-Search-Insert-Position/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode#35. Search Insert Position</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/14/leetcode28-Implement-strStr/" class="archive-article-date">
-  	<time datetime="2017-06-14T12:54:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/14/leetcode28-Implement-strStr/">##leetcode28 Implement strStr</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/07/leetcode27-removeElement-md/" class="archive-article-date">
-  	<time datetime="2017-06-07T07:02:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/07/leetcode27-removeElement-md/">leetcode7 removeElement.md</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/31/leetcode1-twoSum/" class="archive-article-date">
-  	<time datetime="2017-05-31T13:29:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/31/leetcode1-twoSum/">letcode#1 twosum</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/19/webpack1和webpack2的坑/" class="archive-article-date">
-  	<time datetime="2017-04-19T12:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/webpack1和webpack2的坑/">webpack1和webpack2的坑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/09/实现绝对定位元素的居中/" class="archive-article-date">
-  	<time datetime="2017-04-09T08:28:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/09/实现绝对定位元素的居中/">实现绝对定位元素的居中</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/07/双飞翼布局/" class="archive-article-date">
-  	<time datetime="2017-04-07T13:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/07/双飞翼布局/">双飞翼布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/28/express（1）/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:59:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/28/express（1）/">express（1）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" class="archive-article-date">
-  	<time datetime="2017-03-22T13:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">欠债还钱系列（2）不得不面对的闭包</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -457,8 +321,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
