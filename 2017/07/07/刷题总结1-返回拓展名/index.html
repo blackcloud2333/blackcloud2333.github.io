@@ -10,26 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。
 例如，输入 emoji.png，返回 .png。
-这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
-看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址
-测试完之后我相信很多人一遍甚至两次提交都没法通过。所以我愈发的觉得边界条件是一个程序稳">
+  这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址 https://scriptoj.com/测试完之后我相信很多人一遍甚至两次提交都没">
 <meta property="og:type" content="article">
 <meta property="og:title" content="刷题总结1 返回拓展名">
 <meta property="og:url" content="http://yoursite.com/2017/07/07/刷题总结1-返回拓展名/index.html">
 <meta property="og:site_name" content="文以致远">
 <meta property="og:description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。
 例如，输入 emoji.png，返回 .png。
-这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
-看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址
-测试完之后我相信很多人一遍甚至两次提交都没法通过。所以我愈发的觉得边界条件是一个程序稳">
-<meta property="og:updated_time" content="2017-07-07T14:11:11.522Z">
+  这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址 https://scriptoj.com/测试完之后我相信很多人一遍甚至两次提交都没">
+<meta property="og:updated_time" content="2017-07-09T12:45:30.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刷题总结1 返回拓展名">
 <meta name="twitter:description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。
 例如，输入 emoji.png，返回 .png。
-这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
-看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址
-测试完之后我相信很多人一遍甚至两次提交都没法通过。所以我愈发的觉得边界条件是一个程序稳">
+  这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？如果有兴趣的话，可以自己试试。下面是在线测试的地址 https://scriptoj.com/测试完之后我相信很多人一遍甚至两次提交都没">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -87,7 +81,7 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">虽然咸鱼翻身还是咸鱼,但至少可以变得好吃一点</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">我常辨他人是非，却难辨自己真假</a>
     			
             
 		</nav>
@@ -95,6 +89,8 @@
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/blackcloud2333" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="mail" target="_blank" href="/yaningdou@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 					<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E9%9B%85%E5%AE%81-%E7%AA%A6-7a3442139/" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
@@ -134,6 +130,8 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/blackcloud2333" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="mail" target="_blank" href="/yaningdou@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/%E9%9B%85%E5%AE%81-%E7%AA%A6-7a3442139/" title="linkedin"><i class="icon-linkedin"></i></a>
 			        
@@ -183,9 +181,7 @@
       
         <p>完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。</p>
 <p>例如，输入 emoji.png，返回 .png。</p>
-<pre><code>这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。
-</code></pre><p>看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？<br>如果有兴趣的话，可以自己试试。<br>下面是在线测试的地址</p>
-<p><href https:="" scriptoj.com=""><br>测试完之后我相信很多人一遍甚至两次提交都没法通过。<br>所以我愈发的觉得边界条件是一个程序稳定性的保证。<br>下面是我个人写的两种解决方案<br>第一种解决方案</href></p>
+<p>  这个题看似很简单，但是实际上，却有坑，主要就是体现在边界条件上。<br>看过题的人大概都有个想法：这不是很简单吗，按照点来切割不就行了吗？<br>如果有兴趣的话，可以自己试试。<br>下面是在线测试的地址<br> <a href="https://scriptoj.com/" target="_blank" rel="external">https://scriptoj.com/</a><br>测试完之后我相信很多人一遍甚至两次提交都没法通过。<br>所以我愈发的觉得边界条件是一个程序稳定性的保证。<br>下面是我个人写的两种解决方案<br>第一种解决方案</p>
 <p><pre><br>    const extname = (filename) =&gt; {<br>  /<em> TODO </em>/<br>  let i ;<br>  const len = filename.length;<br>  for(i=len-1;i&gt;=0;i–) {<br>    if(filename[i] === ‘.’&amp;&amp;i!=0) {<br>      return filename.substring(i,len);<br>    }<br>  }<br>  return ‘’;<br>}<br></pre><br>第二种解决方案</p>
 <p><pre><br>    const extname = (filename) =&gt; {<br>  /<em> TODO </em>/<br>  var len = filename.length;<br>  if(filename[0] === ‘.’ || filename[len-1] === ‘.’ || filename.includes(‘.’) === false )<br>    return “”;<br>  for(i=len-1;i&gt;=0 ;i –) {<br>    if(filename[i] === ‘.’){<br>      return  filename.slice(i, len);<br>    }<br>  }<br>}<br></pre><br>我觉得应该还是有第三种解决方案的(正则)<br>但是有一个最重要情况是我第一次提交没有考虑到的:’hell0.ab.cd.jpg’，像这样的测试用例，是很容易被忽略的，另外本身这个测试还存在着一定的问题就是’12233.jpg’，这种测试用例明明在本地是跑不通的，但是在线跑就没问题，这个是这个题目的测试用例本身写的有问题的地方。<br>上面的第一个测试用例就决定了在进行遍历的时候一定是不能从0-len-1这样进行遍历的，否则会陷入自己觉得明明没错但是实际却通过不了的困境。</p>
 
@@ -387,7 +383,7 @@ MathJax.Hub.Queue(function() {
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">虽然咸鱼翻身还是咸鱼,但至少可以变得好吃一点</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">我常辨他人是非，却难辨自己真假</a></li>
       
         
     </ul>
