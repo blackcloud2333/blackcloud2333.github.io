@@ -71,7 +71,7 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">我常辨他人是非，却难辨自己真假</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于</a>
     			
             
 		</nav>
@@ -150,6 +150,160 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-ajax请求的时候get和post的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/16/ajax请求的时候get和post的区别/">ajax请求的时候get和post的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/16/ajax请求的时候get和post的区别/" class="archive-article-date">
+  	<time datetime="2017-07-16T06:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1 get的请求要注意缓存问题，post完全的不用担心<br>2 post请求必须设置content-type的值为application/x-form-www-urlencoded<br>3 发送请求的时候因为get请求的参数都在URL里面，所以send的函数发送的参数为null，而post使用send方法的时候要赋予其参数。<br>4 使用get的时候，参数在url中显示，但是使用post方式就不会显示出来。<br>5 使用get发送的数据量比较小，但是使用post发送的数量比较大。</p>
+<p>##服务器端请求的区别<br>在客户端使用get的时候服务器端使用使用RePost.QueryString 来获取参数。<br>当客户端使用post的时候，服务端使用的是Request.Form来获取 参数。关于服务器端获取数据我们还可以使用一个通用的获取数据的方式Request[‘username’]；<br>(1)从请求的URL可以看出来get是带着参数的，post请求的URL则不带。<br>(2)从cache可以看出来，get请求在发送之后就会被立即的缓存，但是post的请求无缓存。<br>(3)从post Data里面大概的可以看出因为git请求的字符串是在URL中附带的，所以postData中无数据。</p>
+<p>##总结：<br>(1)GET：会把数据添加到URL里面，通过这种方式传递到服务器。通常是用的一个问号？来代表URL地址的结尾和参数的开端，后面参数的每一个数据参数都以key:value的形式出现参数和参数之间用&amp;来区分(传值只需要参数的时候用get)<br>(2)POST：数据放在HTTP主体当中的，组织方式不止一种，也有&amp;连接方式，也有分割符的连接方式，可以隐藏参数，传递大批量的数据，较为方便。<br>(用于提交表单和传送较大文件)。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/16/ajax请求的时候get和post的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="w-js当中的对象" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/16/js当中的对象/">js当中的对象</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/16/js当中的对象/" class="archive-article-date">
+  	<time datetime="2017-07-16T02:07:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/16/js当中的对象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-new运算符到底做了什么？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/16/new运算符到底做了什么？/">new运算符到底做了什么？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/16/new运算符到底做了什么？/" class="archive-article-date">
+  	<time datetime="2017-07-16T01:47:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前面看《你不知道的JS》的时候突然看到了这个问题，感觉也很有意义就去研究了下。<br>1 创建一个全新的对象<br>2 这个新对象会被执行[[Prototype]]连接<br>3 这个新对象会被绑定到函数调用的this<br>4 如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象<br>听起来很抽象。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/16/new运算符到底做了什么？/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-刷题总结1-返回拓展名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -482,56 +636,6 @@
 
 
   
-    <article id="post-实现绝对定位元素的居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/09/实现绝对定位元素的居中/">实现绝对定位元素的居中</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/09/实现绝对定位元素的居中/" class="archive-article-date">
-  	<time datetime="2017-04-09T08:28:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/09/实现绝对定位元素的居中/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-双飞翼布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -599,121 +703,9 @@
 
 
   
-    <article id="post-express（1）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/28/express（1）/">express（1）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/28/express（1）/" class="archive-article-date">
-  	<time datetime="2017-03-28T12:59:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- 依赖 -->
-<p>####应用层中间件<br>var express= require(‘express’);<br>var app=express;<br><!-- 安装了上面的依赖之后，下面的请求方式 METHOD代表请求的方式包括常见的POST,GET之类的--><br>app.MEHTOD(‘path’,function () {</p>
-<p>});<br>path:path可以是字符串，字符串模式，正则表达式。<br>中间件函数能访问函数能够访问请求对象(req)，相应对象(res)以及应用请求/响应循环的下一个中间件函数。<br>下一个中间件函数通常由名为next的变量来表示。<br>中间件函数作用：<br>执行任何代码。<br>对请求和响应对象进行更改。<br>结束请求/响应循环。<br>调用堆栈中的下一个中间件函数。<br>应用层中间件实例：<br>var app=express;<br>app.get(‘/user/:id’,function(req,res,next) {<br>    res.send(‘user’);<br>})<br>路由及中间件系统，针对路径发来的get请求<br>跳过路由器中间件堆栈中剩余的中间件函数，调用next(‘route’)</p>
-<p>####路由层中间件<br>var router = express.Router();<br>var app =express();<br>router.use(function (req,res,next) {</p>
-<p>});<br>router.get(‘/user/:id’,function (req,res,next) {<br>    <!-- 处理get请求的函数 --><br>});</p>
-<p>####错误处理中间件<br>比前面的多一个特征符<br>app.use(function (err,req,res,next) {<br>    console.error(err.stack);<br>    res.status(500).send(‘something broke!’)<br>});</p>
-<p>####内置中间件<br>自v4.x起，Express不再支持connect，除了express.static外</p>
-<h3 id="第三方组件"><a href="#第三方组件" class="headerlink" title="第三方组件"></a>第三方组件</h3><p>先使用npm安装<br>$ npm install cookie-parser<br>var express= require(‘express’);<br>var app=exress;<br>var cookieParser = require(‘cookie-parser’);<br>app.use(cookieParser());</p>
-<h3 id="express-Router"><a href="#express-Router" class="headerlink" title="express.Router()"></a>express.Router()</h3><p>使用express.router类来创建可安装的模块化路由处理程序，Router实例是完整的中间件和路由系统<br>var express = require(‘express’);<br>var router =express.Router();<br>router.use(function timeLog (req,res,next) {<br>    console.log(‘time’,Date.now());<br>    next();<br>});<br>router.get(‘/‘,function (req,res) {<br>    res.send(‘bird home page’);<br>});<br>router.get(‘/about’,function (req,res,) {<br>    res.send(‘about birds’);<br>})<br>module.exports = router;<br><!-- 在程序中装入路由器模块 --><br>var birds = require(‘./birds’);<br>app.use(‘/birds’,birds);<br><!-- 此应用程序现在可处理针对 /birds 和 /birds/about 的请求，调用特定于此路由的 timeLog 中间件函数。 --></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/28/express（1）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-欠债还钱系列（2）不得不面对的闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">欠债还钱系列（2）不得不面对的闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/" class="archive-article-date">
-  	<time datetime="2017-03-22T13:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>闭包是每个学JS的人不得不面对的一个问题，前几天听芋头大大的知乎live的时候正好提了一下他们公司的几个面试实习生的看重的几个方面，以及一些能力，顺便给了一下他们实习生面试的题目。然后我就去做了一下，结果发现自己还真的是有一些不会的比如<br>.闭包 下面五段代码分别输出什么？并且什么时候输出什么？<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    console.log(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout(function() {<br>        console.log(i);<br>    }, 1000 <em> i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i </em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    (function() {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>}<br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i </em> 1000);<br>}<br></code><br>这道题就是很经典的闭包的面试题，以及他的几个变种，但是核心来讲还是闭包的问题。<br>闭包：一个有权访问另一个函数作用域的函数。<br>前两道，相信大家都看烂了，所以也不多表，在这里我想说的是第三道，这个涉及了IIFE,闭包，js的单线程，以及匿名函数的作用域等问题。<br>关于这道题的IIFE（立即执行函数）<br><code><br>(function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i <em> 1000);<br>    })(i);<br>    </em></code><br>上面的其实可以这样写<br><code><br>    (function(i) {<br>        setTimeout(function() {<br>            console.log(i);<br>        }, i  1000);<br>    })；<br>    (i);<br></code><br>这样写可能比较好理解，也即是先声明了一个函数表达式，后面的调用这个函数表达式，并且把i传进函数表达式。<br>而且函数通过他们的名字被调用时，参数会被传递，而当函数表达式被立即调用时，参数也会被立即传递。一个立即调用的函数表达式可以锁定当时的状态。<br>因此这样函数表达式外的i就可以顺利的被括号内的function调用和访问了，这样就实现了闭包。<br>如果你不理解这样的写法那么可以先这样写<br><code><br>for(var i=0;i<5;i++){ function="" ret(i){="" timer(){="" console.log(i);="" }="" settimeout(i*1000);="" ret(i);="" <="" code=""><br>这样的话其实会好理解很多，也可以实现闭包。所以结果也就不奇怪了。<br>对于第四题<br>因为根本没有传i进function()里面去，所以循环里面是立即执行的函数，会给每个匿名的函数执行setTimeout，而由于JS的单线程，5个setTimeout()会等待for循环完了再执行，因此会连续的输出5个5.<br>至于第5道，我认为也是很有意思的<br><code><br>for(var i = 0; i &lt; 5; i++) {<br>    setTimeout((function(i) {<br>        console.log(i);<br>    })(i), i * 1000);<br>}<br></code><br>这个考察了对callback的理解，<br>(function(i) {<br>        console.log(i);<br>    })(i)；<br>    这个是一个立即执行的函数的表达式而不是函数！不是函数！不是函数！<br>    而callback要求的是一个函数，因此肯定会报错<br>      throw new TypeError(‘“callback” argument must be a function’);</5;i++){></code></p>
-<pre><code>参考资料：https://segmentfault.com/q/1010000008766695?_ea=1736049
-          https://zhuanlan.zhihu.com/p/25855075（强烈推荐去看，比我写的好的多，通俗易懂也更有技术深度）。
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/22/欠债还钱系列（2）不得不面对的闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -804,7 +796,7 @@ MathJax.Hub.Queue(function() {
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">我常辨他人是非，却难辨自己真假</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于</a></li>
       
         
     </ul>

@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/6 | 文以致远</title>
+  <title>ajax请求的时候get和post的区别 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文以致远">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="1 get的请求要注意缓存问题，post完全的不用担心2 post请求必须设置content-type的值为application/x-form-www-urlencoded3 发送请求的时候因为get请求的参数都在URL里面，所以send的函数发送的参数为null，而post使用send方法的时候要赋予其参数。4 使用get的时候，参数在url中显示，但是使用post方式就不会显示出来。5 使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax请求的时候get和post的区别">
+<meta property="og:url" content="http://yoursite.com/2017/07/16/ajax请求的时候get和post的区别/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="1 get的请求要注意缓存问题，post完全的不用担心2 post请求必须设置content-type的值为application/x-form-www-urlencoded3 发送请求的时候因为get请求的参数都在URL里面，所以send的函数发送的参数为null，而post使用send方法的时候要赋予其参数。4 使用get的时候，参数在url中显示，但是使用post方式就不会显示出来。5 使用">
+<meta property="og:updated_time" content="2017-07-16T07:12:02.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文以致远">
+<meta name="twitter:title" content="ajax请求的时候get和post的区别">
+<meta name="twitter:description" content="1 get的请求要注意缓存问题，post完全的不用担心2 post请求必须设置content-type的值为application/x-form-www-urlencoded3 发送请求的时候因为get请求的参数都在URL里面，所以send的函数发送的参数为null，而post使用send方法的时候要赋予其参数。4 使用get的时候，参数在url中显示，但是使用post方式就不会显示出来。5 使用">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -149,103 +153,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ajax请求的时候get和post的区别" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ajax请求的时候get和post的区别
+    </h1>
+  
+
+        
+        <a href="/2017/07/16/ajax请求的时候get和post的区别/" class="archive-article-date">
+  	<time datetime="2017-07-16T06:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1 get的请求要注意缓存问题，post完全的不用担心<br>2 post请求必须设置content-type的值为application/x-form-www-urlencoded<br>3 发送请求的时候因为get请求的参数都在URL里面，所以send的函数发送的参数为null，而post使用send方法的时候要赋予其参数。<br>4 使用get的时候，参数在url中显示，但是使用post方式就不会显示出来。<br>5 使用get发送的数据量比较小，但是使用post发送的数量比较大。</p>
+<p>##服务器端请求的区别<br>在客户端使用get的时候服务器端使用使用RePost.QueryString 来获取参数。<br>当客户端使用post的时候，服务端使用的是Request.Form来获取 参数。关于服务器端获取数据我们还可以使用一个通用的获取数据的方式Request[‘username’]；<br>(1)从请求的URL可以看出来get是带着参数的，post请求的URL则不带。<br>(2)从cache可以看出来，get请求在发送之后就会被立即的缓存，但是post的请求无缓存。<br>(3)从post Data里面大概的可以看出因为git请求的字符串是在URL中附带的，所以postData中无数据。</p>
+<p>##总结：<br>(1)GET：会把数据添加到URL里面，通过这种方式传递到服务器。通常是用的一个问号？来代表URL地址的结尾和参数的开端，后面参数的每一个数据参数都以key:value的形式出现参数和参数之间用&amp;来区分(传值只需要参数的时候用get)<br>(2)POST：数据放在HTTP主体当中的，组织方式不止一种，也有&amp;连接方式，也有分割符的连接方式，可以隐藏参数，传递大批量的数据，较为方便。<br>(用于提交表单和传送较大文件)。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/18/leetcode-35-Search-Insert-Position/" class="archive-article-date">
-  	<time datetime="2017-06-18T13:16:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/leetcode-35-Search-Insert-Position/">leetcode#35. Search Insert Position</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/16/ajax请求的时候get和post的区别/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/14/leetcode28-Implement-strStr/" class="archive-article-date">
-  	<time datetime="2017-06-14T12:54:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/14/leetcode28-Implement-strStr/">##leetcode28 Implement strStr</a>
-    </h1>
+  
+    <a href="/2017/07/16/js当中的对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js当中的对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/07/leetcode27-removeElement-md/" class="archive-article-date">
-  	<time datetime="2017-06-07T07:02:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/07/leetcode27-removeElement-md/">leetcode7 removeElement.md</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -268,8 +309,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
