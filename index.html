@@ -151,6 +151,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-es5和es6当中的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/30/es5和es6当中的继承/">es5和es6当中的继承</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/30/es5和es6当中的继承/" class="archive-article-date">
+  	<time datetime="2017-07-30T10:55:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##es5中的继承<br>es5中的继承分很多种，在这里我就不赘述了，网上有很多的讲有关这些的教程<br>我在这里推荐一篇<a href="https://juejin.im/post/5912753ba22b9d005817524e" target="_blank" rel="external">https://juejin.im/post/5912753ba22b9d005817524e</a><br>我个人认为方式最好的也是最常见的是寄生式继承也就<br>形式上大概像下面的这种</p>
+<p><pre><br>    /<em><br>寄生组合继承<br>特点:同时继承子类的构造函数和原型中的属性
+ </em>/<br>function Person (name) {<br>    this.name= name;<br>    this.className = ‘Person’;<br>}<br>Person.prototype.getName =function() {<br>    console.log(this.name);<br>}<br>function Man(name){<br>    Person.apply(this,arguments);<br>}<br>//寄生组合继承，就是先创造一个新的man.prototyped对象然后关联到person.prototype<br>//实现了对person.prototype的浅拷贝<br>Man.prototype = Object.create(Person.prototype);</pre></p>
+<p>var man1 = new Man(‘David1’);<br>console.log(man1.name);<br><br>这样的大概是我个人看到的最多的一种继承方式了，这种继承的方式感觉和父类和子类之间构筑了一层隔离物能子类能继承父类，但是又不会影响父类，感觉就很nice。<br>1 this是我认为es6继承和es5继承中殊途同归的一个点（虽然ES6中的class本来就是语法糖）但是ES6当中constructor中的的this就可以看成是类自身的实例对象，给人的感觉更好理解，或者说更贴近于java当中的继承的形式，反正就是语法糖吃起来很甜，但是最终还是殊途同归最终还是要看到其实都是在this上添加各种的属性。<br>2  方法是我认为的第二个语法糖吃起来比较甜的第二个地方，因为ES6中虽然还是把方法放到prototype上面去，但是写起来就很舒服（虽然仍然没有解决私有方法的问题），私有方法我个人还是喜欢写到类的外面去，但是阮一峰的的ES6入门也推荐了一种就是__move()类似这种形式。<br>3 方法屏蔽问题 ，不管在ES5 还是ES6中都没有解决。<br>方法屏蔽：如果子类和父类中都有这样的一种方法，那么在new一个新的对象的时候都会首先在子类上面去找，如果找到了就用子类的，如果找不到，就去父类中找，还找不到就去祖先类中找，还找不到就去顺着原型链一直找到Object.prototype，如果还找不到那么就会抛出undefined。<br>但是怎么解决这个问题呢？<br>这个是我在学习当中遇到的一个问题。<br>解决的方法无非分几种 1 如果确实存在父类和子类同名的方法又想用父类的，那么有一个选择就是new一个父类对象，然后再new一个子类对象，然后分别对两个方法传参<br>就像下面这种</p>
+<p><pre><br>    function Person (name,age) {<br>    this.name = name;<br>    this.age = age;<br>}<br>Person.prototype.toString = function () {<br>    return ‘i am  a person  my name is ‘+ this.name;<br>}<br>function Man(name,age) {<br>    Person.apply(this,arguments);<br>}<br>Man.prototype = Object.create(Person.prototype);<br>Man.prototype.toString = function () {<br>    return ‘ i am a man , and my name is ‘+this.name;<br>}<br>var person =  new Person(‘he’,19);<br>var man1 = new Man(‘David’,18);<br>var man2 = new Man(‘jack’,20);<br>console.log(man1+’’);<br>console.log(person+’’);<br>console.log(man1<man2); <="" pre=""><br>2 第二种情况使我们自己设计方法，我建议是尽量不要同名。在没有同名的情况下，就可以这样写</man2);></pre></p>
+<p><pre><br>    class Father{<br>    constructor(name,age) {<br>        this.age= age;<br>        this.name= name;<br>    }<br>    sayName (name){<br>        return ‘hi father name is ‘+ this.name;<br>    }<br>}<br>class Son extends Father{<br>    constructor(age,id){<br>        super(age);<br>        this.id = id;<br>    }<br>    sayAge(age) {<br>        return ‘son age is ‘+this.age;<br>    }<br>}<br>var son = new Son(‘jack’);<br>console.log(son.sayName());<br></pre><br>我个人认为这样写更加舒服也更加简洁。<br>ps:另外需要说明的一点是<br>在继承的时候ES6中子类必须用在构造函数中使用super之后才能使用this否则this不会指向子类的对象。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/30/es5和es6当中的继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-异步加载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/异步加载/">异步加载</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/19/异步加载/" class="archive-article-date">
+  	<time datetime="2017-07-19T13:13:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/19/异步加载/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-js当中的内存泄泄漏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,7 +277,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>##常见的内存泄漏的情景<br>1 ###意外的全局变量<br>js当中当全局的变量用于存储大量的信息的时候，需要更加的小心，在用完之后要设置为null或者重新进行定义，和全局变量相关增加内存消耗的一个显著的原因就是缓存，但是高内存很可能导致缓存上限。缓存数据是为了保证重用。<br>2 ###被遗忘的计数器或者回调函数，如果计时器用完之后无法被及时的回收，那么也会导致这些问题。<br>3 ###脱离DOM的引用</p>
+
       
 
       
@@ -274,7 +381,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>1 js当中对象的内容并不是储存在对象内部的，对象内部保存的属性值相当于一个引用（指针），用于引用把指向真正存储值的位置。</p>
+<p><pre><br>var myobject = {<br>    value:2;<br>}<br></pre><br>value就相当于一个指针，指向真正存储的位置。<br>2 对象中属性名永远都是字符串，即使使用其他的类型，也会优先尝试转化为字符串。然后在做运算和赋值。</p>
+
       
 
       
@@ -557,118 +666,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/07/leetcode27-removeElement-md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-leetcode1-twoSum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/31/leetcode1-twoSum/">letcode#1 twosum</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/31/leetcode1-twoSum/" class="archive-article-date">
-  	<time datetime="2017-05-31T13:29:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天第一次正式的刷算法题，然后被letcode上的一个相当简单的问题给搞了一下<br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,</p>
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].<br>Subscribe to see which companies asked this question.<br>大致上就是说要求：给了一个target，然后让你在数组里面找出x+y=target中x,y的下标。<br>常见的思路：<br>暴力查询：</p>
-<p><pre><br>    var twoSum = function(nums, target) {<br>    var i,len = nums.length;<br>     for (i=0;i &lt; len-1;i++) {<br>        for (j=i+1;j &lt; len;j++) {<br>            if (nums[i] + nums[j] === target) {<br>                return [i,j];<br>            }<br>        }<br>    }<br>};<br></pre><br>    然后提交之后没办法通过，大概意思是用的方法太蠢了，时间复杂度太高。<br>    想了一下时间复杂度O(n^2),的确有点高。<br>    第二种方法就是hash了，利用map来一边查询一边result推进hash表当中<br>    首先理解思路：<br>    先遍历一遍整个数组确认能拿到每一个值<br>    然后result=target-nums[i];<br>    得到result，如果在hash表当已经有了result，那么直接输出map当中result对应的value(相应的数组下标);<br>    如果hash表当中没有相应的result，比如5(result)=8(target)-3(num[0])<br>    存的时候要存一种key:value的形式，map[num[i]]=i;(因为最后需要的是下标);<br>    <pre><br>    var twoSum = function(nums, target) {<br>    var map = {};<br>    for(var i = 0 ; i &lt; nums.length ; i++){<br>        var v = nums[i];<br>        if(map[target-v] &gt;= 0){<br>            target = x + v<br>            return [map[target-v],i]<br>        } else {<br>            map[v] = i;<br>        }<br>    }<br>};<br>    </pre><br>    当然使用hash也是一样的道理。<br>   很重要:推进hash/map当中的是nums[i],不是result;</p>
-<hr>
-<p>2017.6.6追加</p>
-<p>刚刚刷一道数组去重的问题的时候也发现了一个问题，数组去重问题用一种类似hash的结构也可以完美的解决，而且时间复杂度比暴力检索要好的多<br>arr=[1,5,2,5,5,8,2];<br>一个无序的数组。如果是暴力检索，的话</p>
-<p><pre><br>   var removeDup = function(arr){<br>        var res=[];<br>        for(var i=0; i&lt; arr.length;i++){<br>            for( var j=i+1; j&lt; arr.length ;j++){<br>            if(arr[i]===arr[j]){<br>                j=++i;<br>            }<br>        }<br>        res.push(arr[i]);<br>    }<br>    return res;<br>}<br>console.log(removeDup([1,2,5,1,6]));<br></pre><br>但是这样的方法的确是有点蠢，于是苦思冥想，觉得这个解决方案和第一个twosum解决方案完全是相似的</p>
-<p><pre><br>    var remove=function(arr){<br>    var res=[];<br>    var hash={};<br>    for(var i=0;i&lt; arr.length;i++){<br>    if(!hash[arr[i]]){<br>            res.push(arr[i]);<br>            hash[arr[i]]=1;<br>        }<br>    }<br>    return res;<br>}<br>console.log(remove([1,5,2,5,5,8,2]));<br></pre><br>两个题的思路都是依靠一个key:value;来达到一种利用hash查询的功能，即利用已有的数组中的值和hash当中的值进行比较得出到底有没有重复出现的值，前面是获取到这个值拿来用，后者是排除到这个值。<br>但是这种方法依然是存在着不少的问题的具体的，可以看这个篇文章，本人认为这篇文章写得很棒也很全面。<br><a href="https://www.toobug.net/article/array_unique_in_javascript.html" target="_blank" rel="external">Google</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/31/leetcode1-twoSum/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-webpack1和webpack2的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/19/webpack1和webpack2的坑/">webpack1和webpack2的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/19/webpack1和webpack2的坑/" class="archive-article-date">
-  	<time datetime="2017-04-19T12:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一坑：<br><img src="http://i4.buimg.com/567571/39098cc00fba31fb.png" alt=""><br>绝对路径未定义，webpack1和webpack2是不一样的。等下去找官网看<br>解决方法：<br>const path = require(‘path’);<br>module.exports = {<br>    entry:’./src/script/main.js’,<br>    output: {<br>        path: path.resolve(__dirname, ‘./dist/js’),<br>        filename: ‘bundle.js’<br>    }<br>}<br>这样就行了<br>第二个坑<br>var htmlWebpackPlugin = require (‘html-webpack-plugin’);<br>然后在html模板中写的时候&lt;% = htmlWebpackPlugin %&gt;<br>上面的ejs语法当中必须用驼峰式写法否则就会报错。</p>
-<p>第三个坑<br>还是关于ejs语法的<br>在ejs中写js的时候每一行一行都要以这样的&lt;% %&gt;形式否则就会报错，<br>而且一个问题就是&lt;%= %&gt;这里的这个等于一定要紧紧的靠着第一个%否则也会报错。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/19/webpack1和webpack2的坑/">展开全文 >></a>
         </p>
       
 

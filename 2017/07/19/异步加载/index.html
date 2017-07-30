@@ -6,18 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js当中的内存泄泄漏 | 文以致远</title>
+  <title>异步加载 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##常见的内存泄漏的情景1 ###意外的全局变量js当中当全局的变量用于存储大量的信息的时候，需要更加的小心，在用完之后要设置为null或者重新进行定义，和全局变量相关增加内存消耗的一个显著的原因就是缓存，但是高内存很可能导致缓存上限。缓存数据是为了保证重用。2 ###被遗忘的计数器或者回调函数，如果计时器用完之后无法被及时的回收，那么也会导致这些问题。3 ###脱离DOM的引用">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js当中的内存泄泄漏">
-<meta property="og:url" content="http://yoursite.com/2017/07/16/js当中的内存泄泄漏/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="异步加载">
+<meta property="og:url" content="http://yoursite.com/2017/07/19/异步加载/index.html">
 <meta property="og:site_name" content="文以致远">
-<meta property="og:description" content="##常见的内存泄漏的情景1 ###意外的全局变量js当中当全局的变量用于存储大量的信息的时候，需要更加的小心，在用完之后要设置为null或者重新进行定义，和全局变量相关增加内存消耗的一个显著的原因就是缓存，但是高内存很可能导致缓存上限。缓存数据是为了保证重用。2 ###被遗忘的计数器或者回调函数，如果计时器用完之后无法被及时的回收，那么也会导致这些问题。3 ###脱离DOM的引用">
-<meta property="og:updated_time" content="2017-07-18T12:08:00.038Z">
+<meta property="og:updated_time" content="2017-07-19T13:13:21.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js当中的内存泄泄漏">
-<meta name="twitter:description" content="##常见的内存泄漏的情景1 ###意外的全局变量js当中当全局的变量用于存储大量的信息的时候，需要更加的小心，在用完之后要设置为null或者重新进行定义，和全局变量相关增加内存消耗的一个显著的原因就是缓存，但是高内存很可能导致缓存上限。缓存数据是为了保证重用。2 ###被遗忘的计数器或者回调函数，如果计时器用完之后无法被及时的回收，那么也会导致这些问题。3 ###脱离DOM的引用">
+<meta name="twitter:title" content="异步加载">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -153,28 +150,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js当中的内存泄泄漏" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-异步加载" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js当中的内存泄泄漏
+      异步加载
     </h1>
   
 
         
-        <a href="/2017/07/16/js当中的内存泄泄漏/" class="archive-article-date">
-  	<time datetime="2017-07-16T07:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+        <a href="/2017/07/19/异步加载/" class="archive-article-date">
+  	<time datetime="2017-07-19T13:13:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##常见的内存泄漏的情景<br>1 ###意外的全局变量<br>js当中当全局的变量用于存储大量的信息的时候，需要更加的小心，在用完之后要设置为null或者重新进行定义，和全局变量相关增加内存消耗的一个显著的原因就是缓存，但是高内存很可能导致缓存上限。缓存数据是为了保证重用。<br>2 ###被遗忘的计数器或者回调函数，如果计时器用完之后无法被及时的回收，那么也会导致这些问题。<br>3 ###脱离DOM的引用</p>
-
+        
       
 
       
@@ -253,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/16/js当中的内存泄泄漏/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/19/异步加载/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,18 +263,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/19/异步加载/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/30/es5和es6当中的继承/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          异步加载
+          es5和es6当中的继承
         
       </div>
     </a>
   
   
-    <a href="/2017/07/16/ajax请求的时候get和post的区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ajax请求的时候get和post的区别</div>
+    <a href="/2017/07/16/js当中的内存泄泄漏/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js当中的内存泄泄漏</div>
       <i class="icon-circle-right"></i>
     </a>
   
