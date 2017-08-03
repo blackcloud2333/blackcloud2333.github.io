@@ -12,6 +12,7 @@
 <meta property="og:title" content="文以致远">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文以致远">
   
@@ -150,6 +151,58 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-leetcode27-removeElement-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/07/leetcode27-removeElement-md/">leetcode7 removeElement.md</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/07/leetcode27-removeElement-md/" class="archive-article-date">
+  	<time datetime="2017-06-07T07:02:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##leetcode7 remove Element<br>现在目标是先把leetcode上面easy的题目先刷一遍，所以刷题的顺序有点跳跃，但是慢慢的都会补上的。<br>Given an array and a value, remove all instances of that value in place and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.<br>Example: Given input array nums = [3,2,2,3], val = 3<br>Your function should return length = 2, with the first two elements of nums being 2.<br>删除某个数组当中所有指定的某个数字，返回删除完特定数字之后的数组的长度。<br>(下面的思路是不考虑新开数组的前提下，也尝试了新开数组的方法也可以，但是<br>leetcode，没办法accept(摊手)，所以暂时就先拿这个了)<br>思路：删除val首先要做一遍遍历，for一次，拿到所有的本数组中所有的元素，然后依次和已知的val比一下，然后如果不相等那么就用现在的这个值覆盖nums前面的值，最后输出数组的长度就OK了.</p>
+<p><pre><br>var removeElement = function(nums, val) {<br>    var len=nums.length;<br>    if(len===0) return len;<br>    var count=0;<br>    for(var i=0;i&lt; len;i++){<br>        if(nums[i]!==val){<br>            nums[count++]=nums[i];<br>        }<br>    }<br>    return count;<br>};<br></pre><br>暂时这样写是被accept的，但是边界检查总感觉少了点什么，感觉会是一个坑，不过后面还会再刷，那时候再来补充吧。<br>另外，return的时候，不能return nums.length，因为存在着作用域的问题，直接在最外层returnnums的时候依然会<br>return到的值是前面未经改变过的nums的值。<br>当然实在想返回nums.length的话，应该也行，但是前面的代码要大改，不能这样使用，等完成之后再来补充吧。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/07/leetcode27-removeElement-md/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-leetcode1-twoSum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -632,59 +685,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/03/13/“说出来你可能不信（2），bootstrap贼好用？”/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-ajax怎么用？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/10/ajax怎么用？/">ajax怎么用？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/10/ajax怎么用？/" class="archive-article-date">
-  	<time datetime="2017-03-10T13:10:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>AJAX是什么？<br>全称：Asynchronous Javascript and XML(异步的加载js和XML技术)。<br>为什么要用AJAX?<br>使用ajax之后，当向服务器发送请求的时候不必发生等待结果，而是可以做其他的事情，等到有了结果他会自己根据设定进行后续的操作，与此同时页面不会发生整个页面刷新的也就是进一步提高了用户的体验。<br>AJAX怎么实现异步加载的？<br>（1）创建XMLHttpRequest对象，即创建一个异步调用的对象，而这个对象也是下面所有操作的基础。<br>（2）创建一个新的http请求，并且指定该http请求的方法,url以及验证信息。<br>（3）设置相应http请求变化的函数。<br>（4）发送http请求<br>（5）获取异步调用数据<br>（6）使用js和Dom进行局部的刷新。</p>
-<p>show the code<br><code><br>function createXHR(){<br>    if(typeofXMLHttpRequest!=”undefined”){<br>    return new XMLHttpRequest();<br>}else if(typeof ActiveObject!=’undefined’){<br>    if(typeof arguments.callee.activeXString!=”string”){<br>    var version=[“MSXML2.XMLHttp.6.0”,”MSXML2.XMLHttp.3.0”,”MSXML2.XMLHttp”],i,len;<br>    for(i=0,len=versions.length ;i&lt;length;i++){<br>    try{new ActiveXobject(versons[i]);<br>    arguments.callee.activeXString=version[i];<br>    break;}catch(ex){<br>          //这里拿来写异常抛出吧<br>    }<br>    }<br>}<br>}else {<br>    throw new Error(“No XHR object available.”);<br>}</code></p>
-<p>}<br><br>上面的是函数检测，没办法，我能怎么办，我也很绝望，这个东西不检测就可能没办法去适应ie7,兼容性检测，虽然很让人蛋疼，但是还是得做。<br>先写到这吧，下面还有很多，慢慢的写。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/10/ajax怎么用？/">展开全文 >></a>
         </p>
       
 

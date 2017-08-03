@@ -12,6 +12,7 @@
 <meta property="og:title" content="文以致远">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文以致远">
   
@@ -150,6 +151,59 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-ajax怎么用？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/ajax怎么用？/">ajax怎么用？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/10/ajax怎么用？/" class="archive-article-date">
+  	<time datetime="2017-03-10T13:10:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AJAX是什么？<br>全称：Asynchronous Javascript and XML(异步的加载js和XML技术)。<br>为什么要用AJAX?<br>使用ajax之后，当向服务器发送请求的时候不必发生等待结果，而是可以做其他的事情，等到有了结果他会自己根据设定进行后续的操作，与此同时页面不会发生整个页面刷新的也就是进一步提高了用户的体验。<br>AJAX怎么实现异步加载的？<br>（1）创建XMLHttpRequest对象，即创建一个异步调用的对象，而这个对象也是下面所有操作的基础。<br>（2）创建一个新的http请求，并且指定该http请求的方法,url以及验证信息。<br>（3）设置相应http请求变化的函数。<br>（4）发送http请求<br>（5）获取异步调用数据<br>（6）使用js和Dom进行局部的刷新。</p>
+<p>show the code<br><code><br>function createXHR(){<br>    if(typeofXMLHttpRequest!=”undefined”){<br>    return new XMLHttpRequest();<br>}else if(typeof ActiveObject!=’undefined’){<br>    if(typeof arguments.callee.activeXString!=”string”){<br>    var version=[“MSXML2.XMLHttp.6.0”,”MSXML2.XMLHttp.3.0”,”MSXML2.XMLHttp”],i,len;<br>    for(i=0,len=versions.length ;i&lt;length;i++){<br>    try{new ActiveXobject(versons[i]);<br>    arguments.callee.activeXString=version[i];<br>    break;}catch(ex){<br>          //这里拿来写异常抛出吧<br>    }<br>    }<br>}<br>}else {<br>    throw new Error(“No XHR object available.”);<br>}</code></p>
+<p>}<br><br>上面的是函数检测，没办法，我能怎么办，我也很绝望，这个东西不检测就可能没办法去适应ie7,兼容性检测，虽然很让人蛋疼，但是还是得做。<br>先写到这吧，下面还有很多，慢慢的写。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/10/ajax怎么用？/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-说出来你可能不信系列（1）原型链到底什么鬼？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
