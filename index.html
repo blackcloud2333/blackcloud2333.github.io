@@ -152,6 +152,56 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webdriver-io中的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/26/webdriver-io中的坑/">webdriver.io中的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/26/webdriver-io中的坑/" class="archive-article-date">
+  	<time datetime="2017-08-26T12:10:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/26/webdriver-io中的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-http-websocket-t-的区别和联系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -630,62 +680,6 @@ Sec-WebSocket-Version: 13
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/18/leetcode-35-Search-Insert-Position/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-leetcode28-Implement-strStr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/14/leetcode28-Implement-strStr/">##leetcode28 Implement strStr</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/14/leetcode28-Implement-strStr/" class="archive-article-date">
-  	<time datetime="2017-06-14T12:54:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Implement strStr().<br>题干<br>Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.<br>意思就是找出needle字符串在haystack字符串当中第一次出现的index.<br>下面是accepted的代码：</p>
-<p><pre><br>var strStr = function(haystack, needle) {<br>    if(haystack===””&amp;&amp;needle!==””)<br>    {<br>        return -1;<br>    }<br>    if(haystack===””&amp;&amp;needle===””){<br>        return 0;<br>    }<br>    if(haystack!==””&amp;&amp;needle===””){<br>        return 0;<br>    }<br>    if(haystack!==””){<br>        return haystack.indexOf(needle);<br>    }else{<br>        return -1;<br>    }</pre></p>
-<p>};<br><br>震惊！，第一次竟然accepted了，但是感觉好像有点low，于是乎我就去看了看还有没有其他的方法当然是有的。</p>
-<p><pre><br>Array.prototype.indexOf = function (str) {<br>for (var i = 0; i &lt; this.length; i++) {<br>if (str == this[i]) {<br>return i;<br>      }<br>   }<br>return -1;<br>}</pre></p>
-<p><pre><br>上面的是indexOf实现的源码，几乎所有的其他的方法基本上都是围绕这个来的，当然有一种除外(正则)；<br>ES6当中有contains这样的一种方法也可以判断到底X在不在Y当中，但是没办法判断到底<br>index是多少。</pre></p>
-<p><pre><br>function isContains(str, substr) {<br>    return str.contains(substr);<br>}<br></pre><br>实现原理大概就是这样，但是正则的自己还没彻底弄明白，正好前几天面试也面到了这类题，等后面整理好了再来补充。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/14/leetcode28-Implement-strStr/">展开全文 >></a>
         </p>
       
 
