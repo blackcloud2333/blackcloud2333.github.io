@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>webdriver.io中的坑 | 文以致远</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="最近在公司实习被借调去写黑盒的自动化测试用例，虽然感觉有点坑，但是还是有点收获的。   下面是我踩过的坑    webdriver.io框架给人最值的吐槽的地方框架元素的选定是按照一种：‘可见即可选，不可见即不可选’的方式。这个是我见过最坑的特性了.不过还好还有活路,在4.7版本上有一个movetoObject() 这样的一个API可以用，暂时可以操作滚动条滚动到你想点击的地方，但是，最近更">
+<meta property="og:type" content="article">
 <meta property="og:title" content="webdriver.io中的坑">
 <meta property="og:url" content="http://yoursite.com/2017/08/26/webdriver-io中的坑/index.html">
 <meta property="og:site_name" content="文以致远">
+<meta property="og:description" content="最近在公司实习被借调去写黑盒的自动化测试用例，虽然感觉有点坑，但是还是有点收获的。   下面是我踩过的坑    webdriver.io框架给人最值的吐槽的地方框架元素的选定是按照一种：‘可见即可选，不可见即不可选’的方式。这个是我见过最坑的特性了.不过还好还有活路,在4.7版本上有一个movetoObject() 这样的一个API可以用，暂时可以操作滚动条滚动到你想点击的地方，但是，最近更">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-26T12:10:58.436Z">
+<meta property="og:updated_time" content="2017-08-26T13:50:00.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webdriver.io中的坑">
+<meta name="twitter:description" content="最近在公司实习被借调去写黑盒的自动化测试用例，虽然感觉有点坑，但是还是有点收获的。   下面是我踩过的坑    webdriver.io框架给人最值的吐槽的地方框架元素的选定是按照一种：‘可见即可选，不可见即不可选’的方式。这个是我见过最坑的特性了.不过还好还有活路,在4.7版本上有一个movetoObject() 这样的一个API可以用，暂时可以操作滚动条滚动到你想点击的地方，但是，最近更">
   
     <link rel="alternative" href="/atom.xml" title="文以致远" type="application/atom+xml">
   
@@ -171,7 +174,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>   最近在公司实习被借调去写黑盒的自动化测试用例，虽然感觉有点坑，但是还是有点收获的。<br>   下面是我踩过的坑  </p>
+<ol>
+<li>webdriver.io框架给人最值的吐槽的地方<br>框架元素的选定是按照一种：‘可见即可选，不可见即不可选’的方式。这个是我见过最坑的特性了.不过还好还有活路,在4.7版本上有一个movetoObject() 这样的一个API可以用，暂时可以操作滚动条滚动到你想点击的地方，但是，最近更新的版本，提示这个功能要被移除了！！！！可能接下来的版本会有替代的方法（或许吧）   <ol>
+<li>webdiver.io最让人烦的地方<br>虽然错误信息是比较明确的，可以精确的定位的某一行，但是问题出在没办法想单元测试一样的进行单步调试，所以如果考虑某个特定的测试用例需要用到的界面比较多的话，一旦出现了BUG，调试这个BUG花费的时间巨长无比！！基本上可以说是：代码五分钟，调试两小时了！！</li>
+<li>webdriver.io比较二的地方<br>还是要说到上面的那个movetoObject()方法，如果你的界面比较短还好，如果界面比较大，一屏展示不完，或者说某个表格一屏展示不完的话，框架提供的这个AP对滑动条的移动的效率可是说是相当低了。<br>举个栗子：<br>我手头上的项目是后端给数据接口和整个界面的配置文件(大概上就是相当于页面的结构文件),然后前端用react+redux+react-rooting做渲染,前后端通信实自己封装的ajax方法。<br>初步商定的自动化测试方案是拿着配置文件去匹配DOM，然后做相应的操作。为了提高效率，个人对配置文件做了缓存，只要跑过一次之后，第二次跑的时候可以不用的去遍历配置文件去找某个DOM。<br>所以按理来说算是加速了，但是实际操作的过程中，写其中的一个功能的自动化测试的时候(大概涉及到的界面有10个左右)，跑完这个测试用例要15分钟左右！！！  一旦出了错误直接心态崩盘！！<br>最近还在找更好的调试方法，但是暂时还没找到，后面找到了再来补充。  </li>
+<li>让人心态真正崩盘的DOM选择<br>框架本身选择的时候即支持xpath也支持css-class，看起来美滋滋，但是在用chrome查DOM之后用$去选择的时候，经常会选不到对应的DOM元素(常见于多级选择)。因此在调试的时候如果报错是<br><pre><br>element not found<br></pre><br>首先排查语法错误，其次选择器错误，其次换用其他浏览器继续选DOM。<br>如果上述方法都试过之后仍然有问题，那么可以考虑一级一级的来选，选择每个元素之后在元素的下一行对选择的元素进行打印,确定一下是否真的选中了相应的元素。   </li>
+<li>合理的brower.pause()和waitforuntil()<br>在实际的操作中如果还是选不中元素的话，可以考虑使用 等待的方法，很又可能是因为加载的时间问题，有可能是因为框架运行的太快，而前端还没有渲染完成,都是有可能的。<br>暂时坑就这么多了，后面会继续研究一下,如果有更好的解决办法，会来继续分享。</li>
+</ol>
+</li>
+</ol>
+
       
 
       
@@ -264,6 +277,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/08/26/37互互娱面试总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          37互互娱面试总结
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/08/03/http-websocket-t-的区别和联系/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">http,websocket t 的区别和联系</div>
@@ -308,7 +330,7 @@
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false,
+		open_in_new: true,
 		root: "/",
 		innerArchive: true,
 		showTags: false

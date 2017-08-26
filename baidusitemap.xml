@@ -4,8 +4,53 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/08/26/37%E4%BA%92%E4%BA%92%E5%A8%B1%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2017-08-26T14:09:57.748Z</lastmod>
+    <data>
+        <display>
+        <title>37互互娱面试总结</title>
+        <pubTime>2017-08-26T13:52:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/16/js%E5%BD%93%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E6%B3%84%E6%BC%8F/</loc>
+    <lastmod>2017-08-26T13:51:39.308Z</lastmod>
+    <data>
+        <display>
+        <title>js当中的内存泄泄漏</title>
+        <pubTime>2017-07-16T07:14:44.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/22/%E6%AC%A0%E5%80%BA%E8%BF%98%E9%92%B1%E7%B3%BB%E5%88%97%EF%BC%882%EF%BC%89%E4%B8%8D%E5%BE%97%E4%B8%8D%E9%9D%A2%E5%AF%B9%E7%9A%84%E9%97%AD%E5%8C%85/</loc>
+    <lastmod>2017-08-26T13:51:25.293Z</lastmod>
+    <data>
+        <display>
+        <title>欠债还钱系列（2）不得不面对的闭包</title>
+        <pubTime>2017-03-22T13:31:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/08/26/webdriver-io%E4%B8%AD%E7%9A%84%E5%9D%91/</loc>
-    <lastmod>2017-08-26T12:10:58.436Z</lastmod>
+    <lastmod>2017-08-26T13:50:00.444Z</lastmod>
     <data>
         <display>
         <title>webdriver.io中的坑</title>
@@ -63,36 +108,6 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2017/07/16/js%E5%BD%93%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2017-07-18T12:08:01.068Z</lastmod>
-    <data>
-        <display>
-        <title>js当中的对象</title>
-        <pubTime>2017-07-16T02:07:54.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/16/js%E5%BD%93%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E6%B3%84%E6%BC%8F/</loc>
-    <lastmod>2017-07-18T12:08:00.038Z</lastmod>
-    <data>
-        <display>
-        <title>js当中的内存泄泄漏</title>
-        <pubTime>2017-07-16T07:14:44.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>http://yoursite.com/2017/07/16/ajax%E8%AF%B7%E6%B1%82%E7%9A%84%E6%97%B6%E5%80%99get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
@@ -101,21 +116,6 @@
         <display>
         <title>ajax请求的时候get和post的区别</title>
         <pubTime>2017-07-16T06:44:36.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/16/new%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%B0%E5%BA%95%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
-    <lastmod>2017-07-16T02:08:10.646Z</lastmod>
-    <data>
-        <display>
-        <title>new运算符到底做了什么？</title>
-        <pubTime>2017-07-16T01:47:22.000Z</pubTime>
         
          
            
@@ -230,36 +230,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/28/express%EF%BC%881%EF%BC%89/</loc>
-    <lastmod>2017-03-28T13:57:58.511Z</lastmod>
-    <data>
-        <display>
-        <title>express（1）</title>
-        <pubTime>2017-03-28T12:59:31.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/22/%E6%AC%A0%E5%80%BA%E8%BF%98%E9%92%B1%E7%B3%BB%E5%88%97%EF%BC%882%EF%BC%89%E4%B8%8D%E5%BE%97%E4%B8%8D%E9%9D%A2%E5%AF%B9%E7%9A%84%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2017-03-22T14:02:08.704Z</lastmod>
-    <data>
-        <display>
-        <title>欠债还钱系列（2）不得不面对的闭包</title>
-        <pubTime>2017-03-22T13:31:57.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/03/22/%E6%AC%A0%E5%80%BA%E8%BF%98%E9%92%B1%E7%B3%BB%E5%88%97%EF%BC%881%E2%80%94%EF%BC%89Enumberable%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
     <lastmod>2017-03-22T13:29:35.209Z</lastmod>
     <data>
@@ -281,21 +251,6 @@
         <display>
         <title>笔试总结--新美大</title>
         <pubTime>2017-03-21T14:05:32.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/13/%E2%80%9C%E8%AF%B4%E5%87%BA%E6%9D%A5%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E4%BF%A1%EF%BC%882%EF%BC%89%EF%BC%8Cbootstrap%E8%B4%BC%E5%A5%BD%E7%94%A8%EF%BC%9F%E2%80%9D/</loc>
-    <lastmod>2017-03-13T13:26:17.225Z</lastmod>
-    <data>
-        <display>
-        <title>“说出来你可能不信（2），bootstrap贼好用（1）？”</title>
-        <pubTime>2017-03-13T12:58:37.000Z</pubTime>
         
          
            

@@ -152,6 +152,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-37互互娱面试总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/26/37互互娱面试总结/">37互互娱面试总结</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/26/37互互娱面试总结/" class="archive-article-date">
+  	<time datetime="2017-08-26T13:52:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>前几天电话面了37 互娱，结果:二面挂。
+流程：笔试通过之后HR约了时间，然后面试官没有按时电话来,跟HR沟通之后，延迟一小时,然后开始电话面。  
+感觉电话面很吃亏的地方：  
+1.   第一很容易听不清，可能因为面我的是一个广东人，然后电话信号也不太稳定，总之就是很他可能一个问题要重复两次我才能明确到底问的什么（真的听不清）。
+2.  个人口头表达能力可能部分欠缺，有的地方感觉说不到点子上（也有可能我没get到对方想要的那个点），双方都比较着急。  
+3.  因为最近在ERP公司实习，所以对B端关注比较多，但是可能对面问了一些CSS方面的问题，自己js逻辑写的较多，所以回答的比较不好，总之还是自己准备的不太充分。   
+
+~~~~~~~~~~~~~~~~~~~~~~~~~干货分割线~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+下面是相关知识点：
+1.  var 和let的区别   
+2. 箭头函数和function的区别   
+3. http状态码 502 500  
+4.  个人未来技术方向    
+5.  项目细节问题   
+6.  对个人的评价+学校生活  
+7.  个人认为做的比较成功的项目    
+8.  有什么要问的？   
+9.   公司项目协作问题？遇到了什么问题?你认为最重要的是什么？
+大部分时间在坎项目，项目还是要好好准备的。   
+ 另外：37互娱大致了解了一下，大致上还是用自己写的框架，后端PHP,感觉好像他们公司应该是后端比较重一点，前端大概偏重构向，前端业务大部分是页游的页面，也存在部分的企业内管理工具的业务。   
+ 总之，和我的预期有点不太一样，所以可能聊的时候侧重点也不一样。
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/26/37互互娱面试总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-webdriver-io中的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +243,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>   最近在公司实习被借调去写黑盒的自动化测试用例，虽然感觉有点坑，但是还是有点收获的。<br>   下面是我踩过的坑  </p>
+<ol>
+<li>webdriver.io框架给人最值的吐槽的地方<br>框架元素的选定是按照一种：‘可见即可选，不可见即不可选’的方式。这个是我见过最坑的特性了.不过还好还有活路,在4.7版本上有一个movetoObject() 这样的一个API可以用，暂时可以操作滚动条滚动到你想点击的地方，但是，最近更新的版本，提示这个功能要被移除了！！！！可能接下来的版本会有替代的方法（或许吧）   <ol>
+<li>webdiver.io最让人烦的地方<br>虽然错误信息是比较明确的，可以精确的定位的某一行，但是问题出在没办法想单元测试一样的进行单步调试，所以如果考虑某个特定的测试用例需要用到的界面比较多的话，一旦出现了BUG，调试这个BUG花费的时间巨长无比！！基本上可以说是：代码五分钟，调试两小时了！！</li>
+<li>webdriver.io比较二的地方<br>还是要说到上面的那个movetoObject()方法，如果你的界面比较短还好，如果界面比较大，一屏展示不完，或者说某个表格一屏展示不完的话，框架提供的这个AP对滑动条的移动的效率可是说是相当低了。<br>举个栗子：<br>我手头上的项目是后端给数据接口和整个界面的配置文件(大概上就是相当于页面的结构文件),然后前端用react+redux+react-rooting做渲染,前后端通信实自己封装的ajax方法。<br>初步商定的自动化测试方案是拿着配置文件去匹配DOM，然后做相应的操作。为了提高效率，个人对配置文件做了缓存，只要跑过一次之后，第二次跑的时候可以不用的去遍历配置文件去找某个DOM。<br>所以按理来说算是加速了，但是实际操作的过程中，写其中的一个功能的自动化测试的时候(大概涉及到的界面有10个左右)，跑完这个测试用例要15分钟左右！！！  一旦出了错误直接心态崩盘！！<br>最近还在找更好的调试方法，但是暂时还没找到，后面找到了再来补充。  </li>
+<li>让人心态真正崩盘的DOM选择<br>框架本身选择的时候即支持xpath也支持css-class，看起来美滋滋，但是在用chrome查DOM之后用$去选择的时候，经常会选不到对应的DOM元素(常见于多级选择)。因此在调试的时候如果报错是<br><pre><br>element not found<br></pre><br>首先排查语法错误，其次选择器错误，其次换用其他浏览器继续选DOM。<br>如果上述方法都试过之后仍然有问题，那么可以考虑一级一级的来选，选择每个元素之后在元素的下一行对选择的元素进行打印,确定一下是否真的选中了相应的元素。   </li>
+<li>合理的brower.pause()和waitforuntil()<br>在实际的操作中如果还是选不中元素的话，可以考虑使用 等待的方法，很又可能是因为加载的时间问题，有可能是因为框架运行的太快，而前端还没有渲染完成,都是有可能的。<br>暂时坑就这么多了，后面会继续研究一下,如果有更好的解决办法，会来继续分享。</li>
+</ol>
+</li>
+</ol>
+
       
 
       
@@ -483,109 +564,6 @@ Sec-WebSocket-Version: 13
 
 
   
-    <article id="w-js当中的对象" class="article article-type-w  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/16/js当中的对象/">js当中的对象</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/16/js当中的对象/" class="archive-article-date">
-  	<time datetime="2017-07-16T02:07:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1 js当中对象的内容并不是储存在对象内部的，对象内部保存的属性值相当于一个引用（指针），用于引用把指向真正存储值的位置。</p>
-<p><pre><br>var myobject = {<br>    value:2;<br>}<br></pre><br>value就相当于一个指针，指向真正存储的位置。<br>2 对象中属性名永远都是字符串，即使使用其他的类型，也会优先尝试转化为字符串。然后在做运算和赋值。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/16/js当中的对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-new运算符到底做了什么？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/16/new运算符到底做了什么？/">new运算符到底做了什么？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/16/new运算符到底做了什么？/" class="archive-article-date">
-  	<time datetime="2017-07-16T01:47:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前面看《你不知道的JS》的时候突然看到了这个问题，感觉也很有意义就去研究了下。<br>1 创建一个全新的对象<br>2 这个新对象会被执行[[Prototype]]连接<br>3 这个新对象会被绑定到函数调用的this<br>4 如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象<br>听起来很抽象。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/16/new运算符到底做了什么？/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-刷题总结1-返回拓展名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -697,6 +675,62 @@ Sec-WebSocket-Version: 13
 
 
   
+    <article id="post-leetcode28-Implement-strStr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/14/leetcode28-Implement-strStr/">##leetcode28 Implement strStr</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/14/leetcode28-Implement-strStr/" class="archive-article-date">
+  	<time datetime="2017-06-14T12:54:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Implement strStr().<br>题干<br>Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.<br>意思就是找出needle字符串在haystack字符串当中第一次出现的index.<br>下面是accepted的代码：</p>
+<p><pre><br>var strStr = function(haystack, needle) {<br>    if(haystack===””&amp;&amp;needle!==””)<br>    {<br>        return -1;<br>    }<br>    if(haystack===””&amp;&amp;needle===””){<br>        return 0;<br>    }<br>    if(haystack!==””&amp;&amp;needle===””){<br>        return 0;<br>    }<br>    if(haystack!==””){<br>        return haystack.indexOf(needle);<br>    }else{<br>        return -1;<br>    }</pre></p>
+<p>};<br><br>震惊！，第一次竟然accepted了，但是感觉好像有点low，于是乎我就去看了看还有没有其他的方法当然是有的。</p>
+<p><pre><br>Array.prototype.indexOf = function (str) {<br>for (var i = 0; i &lt; this.length; i++) {<br>if (str == this[i]) {<br>return i;<br>      }<br>   }<br>return -1;<br>}</pre></p>
+<p><pre><br>上面的是indexOf实现的源码，几乎所有的其他的方法基本上都是围绕这个来的，当然有一种除外(正则)；<br>ES6当中有contains这样的一种方法也可以判断到底X在不在Y当中，但是没办法判断到底<br>index是多少。</pre></p>
+<p><pre><br>function isContains(str, substr) {<br>    return str.contains(substr);<br>}<br></pre><br>实现原理大概就是这样，但是正则的自己还没彻底弄明白，正好前几天面试也面到了这类题，等后面整理好了再来补充。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/14/leetcode28-Implement-strStr/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -728,7 +762,7 @@ Sec-WebSocket-Version: 13
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false,
+		open_in_new: true,
 		root: "/",
 		innerArchive: true,
 		showTags: false
